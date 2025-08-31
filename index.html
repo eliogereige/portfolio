@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elio Gereige - Project Management Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Elio Gereige</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Elio Gereige</span>
+                </h1>
+                <h2 class="hero-subtitle">Industrial PhD Student in Nanomedicine</h2>
+                <p class="hero-description">
+                    Biomedical and Mechanical Engineer with 3+ years of cross-functional R&D experience 
+                    in healthcare and pharmaceuticals. Skilled in leading teams and delivering solutions 
+                    from concept to prototype. Eager to leverage technical and managerial experience 
+                    to drive innovation in Product Management roles.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="hero-profile-image">
+                        <img src="profile-photo.jpg" alt="Elio Gereige" />
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years R&D</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Publication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <canvas id="about-canvas" class="section-canvas"></canvas>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>From R&D to Product Management</h3>
+                    <p>
+                        As an Industrial PhD Student in Nanomedicine at MINT (Université d'Angers), 
+                        I've developed expertise in microfluidics, micromixing, and lipid nanoparticle 
+                        synthesis. My research focuses on developing innovative solutions for 
+                        pharmaceutical applications, combining theoretical knowledge with practical implementation.
+                    </p>
+                    <p>
+                        My experience spans from academic research to industrial applications, 
+                        having worked at Inside Therapeutics (InsideTx) where I contributed to 
+                        the development of NanoPulse - a novel organic nanoparticle synthesis machine. 
+                        This unique combination of academic and industrial experience has given me 
+                        valuable insights into product development cycles.
+                    </p>
+                    <p>
+                        I specialize in leading cross-functional teams and managing complex projects 
+                        that require both technical expertise and strategic thinking. My background 
+                        in biomedical engineering, combined with my industrial experience, positions 
+                        me perfectly for Product Management roles in healthcare and pharmaceutical industries.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Industrial PhD in Nanomedicine</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-flask"></i>
+                            <span>3+ Years R&D Experience</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-microscope"></i>
+                            <span>Microfluidics & Nanomedicine</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Product Development & Innovation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="resume-download-card">
+                        <div class="resume-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="resume-info">
+                            <h3>Download My Resume</h3>
+                            <p>Get my comprehensive resume in PDF format</p>
+                            <div class="resume-details">
+                                <span><i class="fas fa-calendar"></i> Updated: January 2025</span>
+                                <span><i class="fas fa-file"></i> PDF Format</span>
+                            </div>
+                        </div>
+                        <div class="resume-actions">
+                            <a href="Elio GEREIGE - Resume [EN].pdf" class="btn btn-primary" download>
+                                <i class="fas fa-download"></i>
+                                Download Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <canvas id="experience-canvas" class="section-canvas"></canvas>
+        <div class="particle-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-grid">
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Industrial PhD Candidate</h3>
+                            <span class="experience-date">Feb 2024 - Present</span>
+                        </div>
+                        <h4>Inside Therapeutics (InsideTx), France</h4>
+                        <p class="experience-role">Nanomedicine & Product Development Research</p>
+                        <ul class="experience-achievements">
+                            <li>Assisted in the design, prototyping, and testing of NanoPulse – a novel organic nanoparticle synthesis machine</li>
+                            <li>Worked on the modeling and full characterization of the NanoPulse micro-mixing technology for LNP synthesis</li>
+                            <li>Developed a Python-based application from scratch to simulate and optimize the mixing process of NanoPulse</li>
+                            <li>Collaborating with CTO Matthieu KERHUEL on cutting-edge nanomedicine technology development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>R&D Engineer</h3>
+                            <span class="experience-date">Nov 2023 - Feb 2024</span>
+                        </div>
+                        <h4>Inside Therapeutics (InsideTx), France</h4>
+                        <p class="experience-role">Biomedical Engineering & Product Development</p>
+                        <ul class="experience-achievements">
+                            <li>Designed, 3D-printed, assembled, and tested characterization bench for microfluidic chips of TAMARA</li>
+                            <li>Developed R-based programs to automatically analyze and process results from chip characterization bench</li>
+                            <li>Worked on modeling and characterization of micro-mixing technology for LNP synthesis</li>
+                            <li>Contributed to product development and testing phases</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>R&D Biomedical Engineering Intern</h3>
+                            <span class="experience-date">Apr 2023 - Sep 2023</span>
+                        </div>
+                        <h4>Inside Therapeutics (InsideTx), France</h4>
+                        <p class="experience-role">Biomedical Engineering & Nanomedicine Research</p>
+                        <ul class="experience-achievements">
+                            <li>Characterized and tested novel active micro-mixing prototype for liposome and lipid nanoparticle synthesis</li>
+                            <li>Developed autonomous image analysis algorithms using ImageJ to validate micro-mixer's mathematical model</li>
+                            <li>Synthesized liposomes of controlled diameters and characterized their size and PDI via DLS</li>
+                            <li>Contributed to technology validation and optimization processes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>R&I Biomedical Engineering Intern</h3>
+                            <span class="experience-date">May 2022 - Jul 2022</span>
+                        </div>
+                        <h4>Hôpital Marie-Lannelongue, France</h4>
+                        <p class="experience-role">Cardiovascular Innovation & Medical Device Development</p>
+                        <ul class="experience-achievements">
+                            <li>Optimized pre-clinical Ex-Vivo Heart Perfusion (EVHP) system in confidential interdisciplinary project</li>
+                            <li>Exchanged with Medical Doctors and applied bio-fluid mechanics concepts</li>
+                            <li>Gained cardiovascular-related knowledge and medical device development experience</li>
+                            <li>Worked on cutting-edge medical technology innovation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Biomedical Engineering Apprentice</h3>
+                            <span class="experience-date">Feb 2022 - Jul 2022</span>
+                        </div>
+                        <h4>EpiLAB, France</h4>
+                        <p class="experience-role">Electrochemistry & Biosensor Development</p>
+                        <ul class="experience-achievements">
+                            <li>Conducted electrochemistry experiments to validate potentiostat and detect substrates/products</li>
+                            <li>Developed experimental protocols for electrochemical detection of gold nanoparticles (AuNPs)</li>
+                            <li>Implemented Differential Pulse Voltammetry (DPV) techniques</li>
+                            <li>Contributed to biosensor development and validation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Microfluidics Engineering Intern</h3>
+                            <span class="experience-date">Apr 2022 - May 2022</span>
+                        </div>
+                        <h4>LadHyX (CNRS – École Polytechnique), France</h4>
+                        <p class="experience-role">Microfluidics & Hydrogel Characterization</p>
+                        <ul class="experience-achievements">
+                            <li>Identified elasticity of PEGDA hydrogels using microfluidic pipette chips</li>
+                            <li>Determined added resistance of PEGDA hydrogels in micro-channels</li>
+                            <li>Acquired lab skills: PDMS microfluidics chip fabrication, solution preparation, digital microscopy</li>
+                            <li>Performed image analysis and processing for hydrogel characterization</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Mechanical Engineering Intern</h3>
+                            <span class="experience-date">Mar 2021 - May 2021</span>
+                        </div>
+                        <h4>Pharmaline – Malia Group, Lebanon</h4>
+                        <p class="experience-role">Pharmaceutical Manufacturing & Quality Assurance</p>
+                        <ul class="experience-achievements">
+                            <li>Created Standard Operating Procedures (SOPs) and Preventive Maintenance Logbooks for 11 pharmaceutical machines</li>
+                            <li>Studied steam generation and water purification systems, identified spare parts requirements</li>
+                            <li>Assisted in selection of new Computerized Maintenance Management System (CMMS)</li>
+                            <li>Performed preventive maintenance following Good Manufacturing Practices (GMP)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Undergraduate Research Assistant</h3>
+                            <span class="experience-date">Feb 2020 - Dec 2020</span>
+                        </div>
+                        <h4>Lebanese American University & Stellantis, France</h4>
+                        <p class="experience-role">Automotive Engineering Research</p>
+                        <ul class="experience-achievements">
+                            <li>Validated thermodynamic simulations for Stirling configurations using REFPROP and MS Excel</li>
+                            <li>Performed MATLAB simulations on vehicle model using bi-level optimization technique</li>
+                            <li>Published research in Journal of Automobile Engineering</li>
+                            <li>Participated in XVI International Forum-Contest of Students and Young Researchers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Mechanical Engineering Intern</h3>
+                            <span class="experience-date">Jun 2019</span>
+                        </div>
+                        <h4>S.L.C.B. – LafargeHolcim, Lebanon</h4>
+                        <p class="experience-role">Industrial Maintenance & Process Optimization</p>
+                        <ul class="experience-achievements">
+                            <li>Optimized bearings' preventive maintenance, reducing waste through lubrication optimization</li>
+                            <li>Set walk-around inspection list for plant's new boiler and weekly inspection sheet for water treatment</li>
+                            <li>Acquired on-field experience by observing corrective maintenance operations</li>
+                            <li>Contributed to industrial process improvement and maintenance planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <canvas id="education-canvas" class="section-canvas"></canvas>
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <h3>Industrial PhD Candidate</h3>
+                            <span class="education-date">Feb 2024 - Present</span>
+                        </div>
+                        <h4>MINT [Université d'Angers – UMR Inserm 1066 – CNRS 6021], France</h4>
+                        <p class="education-field">Nanomedicine - Microfluidics, Micromixing, LNPs, Numerical Simulation</p>
+                        <ul class="education-achievements">
+                            <li>Received "CRS 2024 Best Poster Award" for research presentation</li>
+                            <li>Received "Best Oral Communication Award" at Scientific Day of École Doctorale Biologie Santé</li>
+                            <li>Presented at international conferences and scientific days in nanomedicine field</li>
+                            <li>Research focus: Microfluidics, Micromixing, Lipid Nanoparticles, Numerical Simulation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <h3>Master's Degree (PhD Track)</h3>
+                            <span class="education-date">2021 - 2023</span>
+                        </div>
+                        <h4>École Polytechnique – Institut Polytechnique de Paris, France</h4>
+                        <p class="education-field">Biomedical Engineering - Biomechanics & Biophysics</p>
+                        <ul class="education-achievements">
+                            <li>Major: Biomechanics & Biophysics; Minor: Sensors & Devices / Biomaterials</li>
+                            <li>Cumulative GPA: 16.63/20; Ranked 2nd in class</li>
+                            <li>Received Excellence Scholarship for M1 & M2</li>
+                            <li>Specialized in biomedical engineering and computational mechanics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <h3>Bachelor of Engineering</h3>
+                            <span class="education-date">2017 - 2021</span>
+                        </div>
+                        <h4>Lebanese American University, Lebanon</h4>
+                        <p class="education-field">Mechanical Engineering</p>
+                        <ul class="education-achievements">
+                            <li>Cumulative GPA: 3.86/4; Ranked 5th in class</li>
+                            <li>High Distinction, Distinction List of the School of Engineering</li>
+                            <li>The Charbel Khairallah Endowed Award of Excellence in Engineering</li>
+                            <li>Active in ASME, LAU Entrepreneurship Club, and LAU Robotics Club</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Extracurricular Section -->
+    <section id="leadership" class="leadership">
+        <canvas id="leadership-canvas" class="section-canvas"></canvas>
+        <div class="container">
+            <h2 class="section-title">Leadership & Extracurricular</h2>
+            <div class="leadership-grid">
+                <div class="leadership-card">
+                    <div class="leadership-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="leadership-content">
+                        <h3>Vice President</h3>
+                        <h4>IP Paris Postgraduate Alumni Association</h4>
+                        <p class="leadership-date">Feb 2024 - Sep 2024</p>
+                        <p>Built the club's early online presence, recruited members, and established connections with other alumni associations.</p>
+                    </div>
+                </div>
+
+                <div class="leadership-card">
+                    <div class="leadership-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="leadership-content">
+                        <h3>President</h3>
+                        <h4>Student Board (BDE) - Institut Polytechnique de Paris</h4>
+                        <p class="leadership-date">Oct 2022 - Oct 2023</p>
+                        <p>Led an 8-person board, secured and handled over €12k in funding, and collaborated with over 7 other student clubs. Managed large-scale events for 100+ international students.</p>
+                    </div>
+                </div>
+
+                <div class="leadership-card">
+                    <div class="leadership-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="leadership-content">
+                        <h3>Podcaster & Host</h3>
+                        <h4>"Road to Transhumanism" Podcast</h4>
+                        <p class="leadership-date">Feb 2021 - May 2021</p>
+                        <p>Created and hosted a technology podcast with 4k+ total plays across 85 countries. Interviewed world-renowned experts including Dr. Aubrey de Grey and Dr. Natasha Vita-More.</p>
+                    </div>
+                </div>
+
+                <div class="leadership-card">
+                    <div class="leadership-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="leadership-content">
+                        <h3>On-Campus Events Officer</h3>
+                        <h4>ASME LAU Student Section</h4>
+                        <p class="leadership-date">Jun 2020 - Jun 2021</p>
+                        <p>Organized renewable energy webinar and e-waste management competition in collaboration with NGO Ecoserv LB.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <canvas id="projects-canvas" class="section-canvas"></canvas>
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>NanoPulse Development</h3>
+                        <p>Assisted in design, prototyping, and testing of NanoPulse - a novel organic nanoparticle 
+                           synthesis machine. Developed Python-based application to simulate and optimize mixing process.</p>
+                        <div class="project-tags">
+                            <span class="tag">Product Development</span>
+                            <span class="tag">Nanomedicine</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">12</span>
+                                <span class="metric-label">Months</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Cross-functional</span>
+                                <span class="metric-label">Team</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Industrial</span>
+                                <span class="metric-label">PhD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>RBC Drug Delivery System</h3>
+                        <p>Shear-based encapsulation and drug delivery via Red Blood Cells using COMSOL 
+                           and SolidWorks. Studied drug transport in arterial geometries and in-vivo models.</p>
+                        <div class="project-tags">
+                            <span class="tag">Biomechanics</span>
+                            <span class="tag">COMSOL</span>
+                            <span class="tag">Drug Delivery</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">3</span>
+                                <span class="metric-label">Months</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">École Polytechnique</span>
+                                <span class="metric-label">Course</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Research</span>
+                                <span class="metric-label">Project</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Stirling System Optimization Research</h3>
+                        <p>Published research on Stirling system optimization for series hybrid electric vehicles. 
+                           Validated thermodynamic simulations using REFPROP and performed MATLAB simulations 
+                           using bi-level optimization technique.</p>
+                        <div class="project-tags">
+                            <span class="tag">Research</span>
+                            <span class="tag">Automotive</span>
+                            <span class="tag">MATLAB</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">11</span>
+                                <span class="metric-label">Months</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">1</span>
+                                <span class="metric-label">Publication</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">International</span>
+                                <span class="metric-label">Conference</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Ex-Vivo Heart Perfusion System</h3>
+                        <p>Optimized pre-clinical Ex-Vivo Heart Perfusion (EVHP) system in confidential 
+                           interdisciplinary innovation project at Hôpital Marie-Lannelongue.</p>
+                        <div class="project-tags">
+                            <span class="tag">Biomedical</span>
+                            <span class="tag">Cardiovascular</span>
+                            <span class="tag">Innovation</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">3</span>
+                                <span class="metric-label">Months</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Medical</span>
+                                <span class="metric-label">Doctors</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Confidential</span>
+                                <span class="metric-label">Project</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-table-tennis"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tennis Ball Collector</h3>
+                        <p>Designed and built an automated tennis ball collector with computer vision detection, 
+                           motorized movement system, and quality testing mechanism using IR sensors and servo motors.</p>
+                        <div class="project-tags">
+                            <span class="tag">Automation</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">LabVIEW</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">1</span>
+                                <span class="metric-label">Month</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Prototype</span>
+                                <span class="metric-label">Built</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Quality</span>
+                                <span class="metric-label">Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tower Crane Design</h3>
+                        <p>Designed a 50m tower crane with 25m jib length capable of lifting 10T loads. 
+                           Conducted structural analysis using ANSYS and MATLAB with ISO compliance.</p>
+                        <div class="project-tags">
+                            <span class="tag">Mechanical Design</span>
+                            <span class="tag">ANSYS</span>
+                            <span class="tag">MATLAB</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">12</span>
+                                <span class="metric-label">Months</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Final Year</span>
+                                <span class="metric-label">Project</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">ISO</span>
+                                <span class="metric-label">Compliant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-more">
+                <p class="projects-note">
+                    <strong>Additional Projects:</strong> HVAC Design, Bicycle Failure Analysis, 
+                    Heat Transfer through Pin Fin, Self-Balancing Ball-on-a-Rod, 
+                    Sun Tracking Solar Panel, TAMARA Microfluidic System, Cordless Drill Design
+                </p>
+                <p class="projects-skills">
+                    <strong>Key Skills Demonstrated:</strong> Team Leadership, CAD Design, 
+                    Control Systems, LabVIEW Programming, Stress Analysis, Thermal Analysis
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <canvas id="skills-canvas" class="section-canvas"></canvas>
+        <div class="geometric-shapes">
+            <div class="geo-shape geo-1"></div>
+            <div class="geo-shape geo-2"></div>
+            <div class="geo-shape geo-3"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Skills & Competencies</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>Core Competencies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="skill-content">
+                                <h4>Product Development</h4>
+                                <p>From concept to prototype with rapid iteration cycles</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Prototyping</span>
+                                    <span class="skill-tag">3D Printing</span>
+                                    <span class="skill-tag">CAD Design</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="skill-content">
+                                <h4>Technical Analysis</h4>
+                                <p>Advanced simulation and data-driven decision making</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Simulation</span>
+                                    <span class="skill-tag">Data Analysis</span>
+                                    <span class="skill-tag">Optimization</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="skill-content">
+                                <h4>Biomedical Engineering</h4>
+                                <p>Specialized in nanomedicine and microfluidics</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Microfluidics</span>
+                                    <span class="skill-tag">Nanomedicine</span>
+                                    <span class="skill-tag">Drug Delivery</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="skill-content">
+                                <h4>Leadership & Communication</h4>
+                                <p>Cross-functional team management and stakeholder engagement</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Team Leadership</span>
+                                    <span class="skill-tag">Communication</span>
+                                    <span class="skill-tag">Project Management</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Technical Arsenal</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Python</h4>
+                                <p>Application development & simulation</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>MATLAB</h4>
+                                <p>Numerical analysis & optimization</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>SolidWorks</h4>
+                                <p>3D modeling & mechanical design</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>ANSYS</h4>
+                                <p>Structural & thermal analysis</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-table"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>R Programming</h4>
+                                <p>Statistical analysis & automation</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>COMSOL</h4>
+                                <p>Multiphysics simulation</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>LabVIEW</h4>
+                                <p>Control systems & automation</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>ImageJ</h4>
+                                <p>Image analysis & processing</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="tool-info">
+                                <h4>DLS</h4>
+                                <p>Nanoparticle characterization</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Industry Expertise</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <div class="expertise-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <div class="expertise-content">
+                                <h4>Pharmaceutical</h4>
+                                <p>GMP compliance, quality assurance, regulatory standards</p>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="expertise-content">
+                                <h4>Healthcare</h4>
+                                <p>Medical devices, cardiovascular systems, clinical applications</p>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <div class="expertise-content">
+                                <h4>Manufacturing</h4>
+                                <p>Process optimization, maintenance systems, industrial automation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <canvas id="certifications-canvas" class="section-canvas"></canvas>
+        <div class="container">
+            <h2 class="section-title">Certifications & Training</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>McKinsey Forward Program</h3>
+                        <p class="certification-issuer">McKinsey & Company</p>
+                        <p class="certification-date">July 2025</p>
+                        <p class="certification-description">
+                            Advanced professional development program focusing on problem solving, 
+                            business strategy, leadership, and digital transformation skills.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Pharmaceutical GMP Training</h3>
+                        <p class="certification-issuer">AKTEHOM</p>
+                        <p class="certification-date">April 2025</p>
+                        <p class="certification-description">
+                            Good Manufacturing Practice (GMP) training for pharmaceutical industry, 
+                            covering quality assurance, regulatory compliance, and manufacturing standards.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Nanoparticle Size & Zeta Potential Measurement</h3>
+                        <p class="certification-issuer">Malvern Panalytical</p>
+                        <p class="certification-date">March 2025</p>
+                        <p class="certification-description">
+                            Training on Dynamic Light Scattering (DLS) for measuring nanoparticle 
+                            size and zeta potential in pharmaceutical and nanomedicine applications.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>CE Marking & International Product Certification</h3>
+                        <p class="certification-issuer">CAP'TRONIC</p>
+                        <p class="certification-date">August 2024</p>
+                        <p class="certification-description">
+                            Training on European conformity marking and international product 
+                            certification standards for medical devices and electronic equipment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Critical Thinking for Better Judgment</h3>
+                        <p class="certification-issuer">LinkedIn</p>
+                        <p class="certification-date">August 2020</p>
+                        <p class="certification-description">
+                            Advanced problem-solving and decision-making skills training, 
+                            focusing on critical thinking methodologies and analytical approaches.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Elements of AI</h3>
+                        <p class="certification-issuer">University of Helsinki</p>
+                        <p class="certification-date">August 2020</p>
+                        <p class="certification-description">
+                            Comprehensive introduction to artificial intelligence fundamentals, 
+                            machine learning concepts, and AI applications in modern technology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always interested in new opportunities and collaborations. 
+                        Whether you have a project in mind or just want to chat about 
+                        engineering and project management, feel free to reach out.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>elio.gereige@outlook.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bordeaux, Nouvelle-Aquitaine, France</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/eliogereige" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://orcid.org/0000-0003-4610-8247" class="social-link" target="_blank">
+                            <i class="fas fa-id-badge"></i>
+                        </a>
+                        <a href="https://doi.org/10.1177/09544070211018034" class="social-link" target="_blank">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                        <a href="https://github.com/eliogereige" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Elio Gereige</h3>
+                    <p>Industrial PhD Student in Nanomedicine</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/eliogereige" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/eliogereige" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://orcid.org/0000-0003-4610-8247" target="_blank"><i class="fas fa-id-badge"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Elio Gereige. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
