@@ -37,6 +37,7 @@ body {
     overflow-x: hidden;
     transition: all 0.3s ease;
     scroll-behavior: smooth;
+    text-align: justify;
 }
 
 /* Prevent purple loading flash */
@@ -400,18 +401,61 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     position: relative;
+}
+
+/* Section Title Colors - Coordinated with Backgrounds */
+.hero .section-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about .section-title {
+    color: var(--primary-dark);
+    text-shadow: 0 2px 4px rgba(9, 134, 152, 0.2);
+}
+
+.experience .section-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.education .section-title {
+    color: var(--primary-dark);
+    text-shadow: 0 2px 4px rgba(9, 134, 152, 0.2);
+}
+
+.skills .section-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.projects .section-title {
+    color: var(--primary-dark);
+    text-shadow: 0 2px 4px rgba(9, 134, 152, 0.2);
+}
+
+.leadership .section-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.certifications .section-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(9, 134, 152, 0.2);
+}
+
+.contact .section-title {
+    color: var(--primary-dark);
+    text-shadow: 0 2px 4px rgba(9, 134, 152, 0.2);
 }
 
 /* About Section */
 .about {
-    background: var(--bg-tertiary);
+    background: var(--bg-primary);
     position: relative;
     overflow: hidden;
+    padding: 80px 0;
 }
 
 .about .container {
@@ -590,124 +634,122 @@ section {
     font-size: 0.9rem;
 }
 
-/* Experience Section */
+/* Experience Section - Redesigned to Break Monotony */
 .experience {
     padding: 80px 0;
-    background: var(--bg-secondary);
-    position: relative;
-    overflow: hidden;
-}
-
-.experience .container {
+    background: var(--primary);
     position: relative;
     z-index: 15;
-}
-
-/* Particle Effects */
-.particle-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--primary);
-    border-radius: 50%;
-    opacity: 0.1;
-    animation: particle-float 8s linear infinite;
-}
-
-.particle:nth-child(1) {
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
-    animation-duration: 6s;
-}
-
-.particle:nth-child(2) {
-    top: 40%;
-    right: 20%;
-    animation-delay: 1s;
-    animation-duration: 8s;
-}
-
-.particle:nth-child(3) {
-    top: 70%;
-    left: 30%;
-    animation-delay: 2s;
-    animation-duration: 7s;
-}
-
-.particle:nth-child(4) {
-    top: 30%;
-    right: 40%;
-    animation-delay: 3s;
-    animation-duration: 9s;
-}
-
-.particle:nth-child(5) {
-    top: 80%;
-    right: 10%;
-    animation-delay: 4s;
-    animation-duration: 5s;
-}
-
-@keyframes particle-float {
-    0% {
-        transform: translateY(0px) translateX(0px);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.3;
-    }
-    90% {
-        opacity: 0.3;
-    }
-    100% {
-        transform: translateY(-100px) translateX(50px);
-        opacity: 0;
-    }
+    color: white;
 }
 
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-.experience-card {
-    background: white;
+/* Featured Experience - Large Hero Card */
+.experience-card.featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, white 0%, var(--bg-secondary) 100%);
     border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    border: 1px solid var(--border-light);
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary);
     position: relative;
     overflow: hidden;
 }
 
-.experience-card::before {
+.experience-card.featured::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    height: 6px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent-light) 100%);
 }
 
-.experience-card:hover {
+.experience-card.featured .experience-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(9, 134, 152, 0.3);
+}
+
+.experience-card.featured .experience-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+}
+
+/* Regular Experience Cards - Different Layouts */
+.experience-card:not(.featured) {
+    background: linear-gradient(135deg, white 0%, var(--bg-secondary) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border: 2px solid var(--primary-light);
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.experience-card:not(.featured):nth-child(odd) {
+    border-left: 4px solid var(--primary);
+}
+
+.experience-card:not(.featured):nth-child(even) {
+    border-right: 4px solid var(--accent);
+}
+
+.experience-card:not(.featured):nth-child(3n) {
+    border-bottom: 4px solid var(--primary-light);
+}
+
+/* Experience Card Hover Effects */
+.experience-card:not(.featured):hover {
     transform: translateY(-8px) rotateX(3deg) rotateY(-3deg);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.experience-card:not(.featured):hover .experience-icon {
+    transform: scale(1.1) rotate(-5deg);
+    transition: all 0.4s ease;
+}
+
+/* Experience Icon Variations */
+.experience-card:nth-child(2) .experience-icon {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+}
+
+.experience-card:nth-child(3) .experience-icon {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+}
+
+.experience-card:nth-child(4) .experience-icon {
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+}
+
+.experience-card:nth-child(5) .experience-icon {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+}
+
+.experience-card:nth-child(6) .experience-icon {
+    background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+}
+
+.experience-card:nth-child(7) .experience-icon {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent-light) 100%);
+}
+
+.experience-card:nth-child(8) .experience-icon {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary-light) 100%);
+}
+
+.experience-card:nth-child(9) .experience-icon {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
 }
 
 .experience-icon {
@@ -800,9 +842,10 @@ section {
 /* Education Section */
 .education {
     padding: 80px 0;
-    background: white;
+    background: var(--bg-secondary);
     position: relative;
     z-index: 15;
+    color: var(--text-primary);
 }
 
 .education-grid {
@@ -831,6 +874,7 @@ section {
     right: 0;
     height: 4px;
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    border-radius: 20px 20px 0 0;
 }
 
 .education-card:hover {
@@ -953,9 +997,10 @@ section {
     color: var(--accent-light);
 }
 .projects {
-    background: white;
+    background: var(--bg-primary);
     position: relative;
     z-index: 15;
+    color: var(--text-primary);
 }
 
 .projects-grid {
@@ -965,13 +1010,16 @@ section {
 }
 
 .project-card {
-    background: white;
-    border-radius: 16px;
+    background: linear-gradient(135deg, white 0%, var(--bg-secondary) 100%);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     transition: all 0.4s ease;
-    border: 1px solid var(--border-light);
-    position: relative
+    border: 2px solid var(--primary-light);
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card::before {
@@ -982,6 +1030,10 @@ section {
     right: 0;
     height: 4px;
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    border-radius: 20px 20px 0 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -1011,6 +1063,32 @@ section {
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Project Image Variations */
+.project-card:nth-child(1) .project-image {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.project-card:nth-child(2) .project-image {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+}
+
+.project-card:nth-child(3) .project-image {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+}
+
+.project-card:nth-child(4) .project-image {
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+}
+
+.project-card:nth-child(5) .project-image {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+}
+
+.project-card:nth-child(6) .project-image {
+    background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
 }
 
 .project-image::before {
@@ -1026,6 +1104,10 @@ section {
 
 .project-content {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
 
 .project-content h3 {
@@ -1035,17 +1117,32 @@ section {
     font-weight: 600;
 }
 
-.project-content p {
+.project-content ul {
     color: var(--text-muted);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    flex: 1;
+    text-align: justify;
+    min-height: 120px;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-metrics {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--primary-light);
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
 }
 
 .tag {
@@ -1058,12 +1155,6 @@ section {
     border: 1px solid var(--primary-light);
 }
 
-.project-metrics {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
 .metric {
     text-align: center;
     flex: 1;
@@ -1074,6 +1165,7 @@ section {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary);
+    margin-bottom: 0.25rem;
 }
 
 .metric-label {
@@ -1084,9 +1176,10 @@ section {
 /* Skills Section */
 .skills {
     padding: 80px 0;
-    background: white;
+    background: var(--primary-light);
     position: relative;
     overflow: hidden;
+    color: var(--text-primary);
 }
 
 .skills .container {
@@ -1475,9 +1568,10 @@ section {
 /* Leadership Section */
 .leadership {
     padding: 80px 0;
-    background: var(--bg-tertiary);
+    background: var(--accent);
     position: relative;
     z-index: 15;
+    color: white;
 }
 
 .leadership-grid {
@@ -1488,12 +1582,70 @@ section {
 }
 
 .leadership-card {
-    background: white;
-    border-radius: 15px;
+    background: linear-gradient(135deg, white 0%, var(--bg-secondary) 100%);
+    border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
-    border: 1px solid var(--border-light);
+    border: 2px solid var(--accent-light);
+}
+
+/* Podcast Hero Card - Special Styling */
+.leadership-card.podcast-hero {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, white 0%, var(--bg-secondary) 100%);
+    border: 2px solid var(--primary);
+    box-shadow: 0 15px 35px rgba(9, 134, 152, 0.15);
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.leadership-card.podcast-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent-light) 100%);
+}
+
+.leadership-card.podcast-hero .leadership-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(9, 134, 152, 0.3);
+    margin: 0 auto 1.5rem;
+}
+
+.leadership-card.podcast-hero .leadership-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.leadership-card.podcast-hero .leadership-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.leadership-card.podcast-hero .leadership-achievements {
+    text-align: left;
+    margin: 1.5rem auto;
+    max-width: 600px;
+}
+
+.leadership-card.podcast-hero .podcast-links {
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.leadership-card.podcast-hero .podcast-stats {
+    justify-content: center;
+    margin-top: 1.5rem;
 }
 
 .leadership-card:hover {
@@ -1656,9 +1808,10 @@ section {
 /* Certifications Section */
 .certifications {
     padding: 80px 0;
-    background: var(--bg-tertiary);
+    background: var(--primary-dark);
     position: relative;
     z-index: 15;
+    color: white;
 }
 
 .certifications-grid {
@@ -1669,12 +1822,12 @@ section {
 }
 
 .certification-card {
-    background: white;
-    border-radius: 15px;
+    background: linear-gradient(135deg, white 0%, var(--bg-secondary) 100%);
+    border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
-    border: 1px solid var(--border-light);
+    border: 2px solid var(--primary-light);
 }
 
 .certification-card:hover {
@@ -2052,7 +2205,7 @@ html {
     scroll-behavior: smooth;
 } 
 
-/* Premium Floating Elements */
+/* Premium Floating Elements - Optimized */
 .floating-elements {
     position: absolute;
     top: 0;
@@ -2064,244 +2217,123 @@ html {
     overflow: hidden;
 }
 
-/* Hero Section Floating Elements */
+/* Hero Section - Only 2 elements for performance */
 .hero .floating-cube {
     position: absolute;
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-    top: 20%;
-    left: 15%;
-    animation: float-hero 8s ease-in-out infinite;
-    opacity: 0.6;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-light);
+    top: 25%;
+    left: 20%;
+    animation: float-simple 12s ease-in-out infinite;
+    opacity: 0.4;
 }
 
 .hero .floating-triangle {
     position: absolute;
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 14px solid var(--accent-light);
-    top: 60%;
-    right: 20%;
-    animation: float-hero 10s ease-in-out infinite reverse;
-    opacity: 0.4;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid var(--accent-light);
+    top: 70%;
+    right: 25%;
+    animation: float-simple 15s ease-in-out infinite reverse;
+    opacity: 0.3;
 }
 
-.hero .floating-hexagon {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: var(--primary);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    top: 40%;
-    right: 10%;
-    animation: float-hero 12s ease-in-out infinite;
-    opacity: 0.5;
-}
-
-/* Section Floating Elements */
+/* Section Floating Elements - Reduced to 1 per section */
 .about .floating-dot {
     position: absolute;
     width: 6px;
     height: 6px;
     background: var(--primary-light);
     border-radius: 50%;
-    top: 30%;
-    left: 10%;
-    animation: float-section 15s ease-in-out infinite;
-    opacity: 0.3;
-}
-
-.about .floating-line {
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-light) 0%, transparent 100%);
-    top: 70%;
-    right: 15%;
-    animation: float-section 18s ease-in-out infinite reverse;
-    opacity: 0.4;
+    top: 40%;
+    right: 20%;
+    animation: float-simple 20s ease-in-out infinite;
+    opacity: 0.2;
 }
 
 .experience .floating-circle {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: var(--primary);
-    border-radius: 50%;
-    top: 25%;
-    right: 20%;
-    animation: float-section 20s ease-in-out infinite;
-    opacity: 0.3;
-}
-
-.experience .floating-square {
-    position: absolute;
     width: 8px;
     height: 8px;
-    background: var(--accent-light);
-    top: 75%;
-    left: 8%;
-    animation: float-section 16s ease-in-out infinite reverse;
-    opacity: 0.4;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 30%;
+    left: 15%;
+    animation: float-simple 25s ease-in-out infinite reverse;
+    opacity: 0.2;
 }
 
 .education .floating-diamond {
     position: absolute;
-    width: 12px;
-    height: 12px;
-    background: var(--primary-light);
+    width: 10px;
+    height: 10px;
+    background: var(--accent-light);
     transform: rotate(45deg);
-    top: 40%;
-    right: 12%;
-    animation: float-section 22s ease-in-out infinite;
-    opacity: 0.3;
-}
-
-.education .floating-oval {
-    position: absolute;
-    width: 16px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    top: 80%;
-    left: 15%;
-    animation: float-section 19s ease-in-out infinite reverse;
-    opacity: 0.4;
+    top: 60%;
+    right: 18%;
+    animation: float-simple 22s ease-in-out infinite;
+    opacity: 0.2;
 }
 
 .skills .floating-star {
     position: absolute;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background: var(--primary);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    top: 35%;
-    left: 12%;
-    animation: float-section 17s ease-in-out infinite;
-    opacity: 0.3;
-}
-
-.skills .floating-cross {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: var(--accent-light);
-    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
-    top: 65%;
-    right: 18%;
-    animation: float-section 21s ease-in-out infinite reverse;
-    opacity: 0.4;
+    top: 50%;
+    left: 20%;
+    animation: float-simple 18s ease-in-out infinite;
+    opacity: 0.2;
 }
 
 .projects .floating-pentagon {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background: var(--primary-light);
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    top: 45%;
-    left: 10%;
-    animation: float-section 24s ease-in-out infinite;
-    opacity: 0.3;
-}
-
-.projects .floating-arc {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--accent);
-    border-radius: 50%;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    top: 75%;
+    top: 35%;
     right: 15%;
-    animation: float-section 26s ease-in-out infinite reverse;
-    opacity: 0.4;
+    animation: float-simple 30s ease-in-out infinite;
+    opacity: 0.2;
 }
 
 .leadership .floating-wave {
     position: absolute;
-    width: 20px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--accent-light) 50%, transparent 100%);
-    top: 30%;
-    left: 15%;
-    animation: float-section 23s ease-in-out infinite;
-    opacity: 0.3;
-}
-
-.leadership .floating-dot {
-    position: absolute;
-    width: 7px;
-    height: 7px;
+    width: 16px;
+    height: 2px;
     background: var(--accent);
-    border-radius: 50%;
-    top: 70%;
-    right: 12%;
-    animation: float-section 25s ease-in-out infinite reverse;
-    opacity: 0.4;
+    top: 45%;
+    left: 12%;
+    animation: float-simple 28s ease-in-out infinite reverse;
+    opacity: 0.2;
 }
 
 .certifications .floating-triangle {
     position: absolute;
     width: 0;
     height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 10px solid var(--primary-light);
-    top: 35%;
-    left: 20%;
-    animation: float-section 28s ease-in-out infinite;
-    opacity: 0.3;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid var(--primary-light);
+    top: 55%;
+    right: 20%;
+    animation: float-simple 32s ease-in-out infinite;
+    opacity: 0.2;
 }
 
-.certifications .floating-circle {
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    background: var(--accent-light);
-    border-radius: 50%;
-    top: 75%;
-    right: 18%;
-    animation: float-section 30s ease-in-out infinite reverse;
-    opacity: 0.4;
-}
-
-/* Floating Animations */
-@keyframes float-hero {
+/* Simplified Floating Animation */
+@keyframes float-simple {
     0%, 100% {
-        transform: translateY(0px) translateX(0px) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-20px) translateX(10px) rotate(90deg);
+        transform: translateY(0px) translateX(0px);
     }
     50% {
-        transform: translateY(-10px) translateX(-15px) rotate(180deg);
-    }
-    75% {
-        transform: translateY(-30px) translateX(5px) rotate(270deg);
-    }
-}
-
-@keyframes float-section {
-    0%, 100% {
-        transform: translateY(0px) translateX(0px) rotate(0deg);
-        opacity: 0.3;
-    }
-    25% {
-        transform: translateY(-15px) translateX(8px) rotate(45deg);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translateY(-8px) translateX(-12px) rotate(90deg);
-        opacity: 0.4;
-    }
-    75% {
-        transform: translateY(-25px) translateX(3px) rotate(135deg);
-        opacity: 0.6;
+        transform: translateY(-15px) translateX(8px);
     }
 }
 
@@ -2317,3 +2349,295 @@ html {
     transition: width 0.1s ease;
     box-shadow: 0 2px 10px rgba(9, 134, 152, 0.3);
 } 
+
+/* Shooting Stars - Magical Effect */
+.shooting-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: none;
+}
+
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, white 0%, transparent 100%);
+    transform: translateX(-100px);
+}
+
+.shooting-star::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, white 0%, transparent 100%);
+    transform: translateX(-60px);
+}
+
+/* Shooting Star Animation */
+@keyframes shooting-star-1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) translateY(20vh) rotate(45deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(calc(100vw + 100px)) translateY(calc(20vh + 100vw)) rotate(45deg);
+    }
+}
+
+@keyframes shooting-star-2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) translateY(60vh) rotate(60deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(calc(100vw + 100px)) translateY(calc(60vh + 100vw)) rotate(60deg);
+    }
+}
+
+@keyframes shooting-star-3 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) translateY(40vh) rotate(30deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(calc(100vw + 100px)) translateY(calc(40vh + 100vw)) rotate(30deg);
+    }
+}
+
+/* Individual Shooting Star Animations */
+.shooting-star:nth-child(1) {
+    animation: shooting-star-1 4s ease-out infinite;
+    animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+    animation: shooting-star-2 5s ease-out infinite;
+    animation-delay: 25s;
+}
+
+/* Random Shooting Star Animation */
+@keyframes shooting-star-random {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) translateY(var(--start-y)) rotate(var(--angle));
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(calc(100vw + 100px)) translateY(calc(var(--start-y) + 100vw)) rotate(var(--angle));
+    }
+}
+
+/* Random shooting star styling */
+.shooting-star.random {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
+
+.shooting-star.random::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+    transform: translateX(-120px);
+}
+
+.shooting-star.random::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, white 0%, transparent 100%);
+    transform: translateX(-80px);
+}
+
+/* Enhanced Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 100px 0 50px;
+    position: relative;
+    overflow: hidden;
+} 
+
+/* Smooth Section Transitions */
+section {
+    padding: 80px 0;
+    transition: background-color 0.8s ease-in-out;
+}
+
+/* Section Background Colors - Smooth & Natural */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.about {
+    background: var(--bg-primary);
+}
+
+.experience {
+    background: var(--primary);
+}
+
+.education {
+    background: var(--bg-secondary);
+}
+
+.skills {
+    background: var(--primary-light);
+}
+
+.projects {
+    background: var(--bg-primary);
+}
+
+.leadership {
+    background: var(--accent);
+}
+
+.certifications {
+    background: var(--primary-dark);
+}
+
+.contact {
+    background: var(--bg-secondary);
+} 
+
+/* Scroll-Triggered Reveal Effects - TEMPORARILY DISABLED */
+.section-content {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+}
+
+.section-content.revealed {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Individual Card Reveal Animations - TEMPORARILY DISABLED */
+.experience-card,
+.education-card,
+.skill-card,
+.tool-card,
+.project-card,
+.leadership-card,
+.certification-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+}
+
+.experience-card.revealed,
+.education-card.revealed,
+.skill-card.revealed,
+.tool-card.revealed,
+.project-card.revealed,
+.leadership-card.revealed,
+.certification-card.revealed {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Staggered Card Reveals */
+.experience-card:nth-child(1) { transition-delay: 0.1s; }
+.experience-card:nth-child(2) { transition-delay: 0.2s; }
+.experience-card:nth-child(3) { transition-delay: 0.3s; }
+.experience-card:nth-child(4) { transition-delay: 0.4s; }
+.experience-card:nth-child(5) { transition-delay: 0.5s; }
+.experience-card:nth-child(6) { transition-delay: 0.6s; }
+.experience-card:nth-child(7) { transition-delay: 0.7s; }
+.experience-card:nth-child(8) { transition-delay: 0.8s; }
+.experience-card:nth-child(9) { transition-delay: 0.9s; }
+
+.education-card:nth-child(1) { transition-delay: 0.1s; }
+.education-card:nth-child(2) { transition-delay: 0.2s; }
+.education-card:nth-child(3) { transition-delay: 0.3s; }
+
+.skill-card:nth-child(1) { transition-delay: 0.1s; }
+.skill-card:nth-child(2) { transition-delay: 0.2s; }
+.skill-card:nth-child(3) { transition-delay: 0.3s; }
+
+.tool-card:nth-child(1) { transition-delay: 0.1s; }
+.tool-card:nth-child(2) { transition-delay: 0.2s; }
+.tool-card:nth-child(3) { transition-delay: 0.3s; }
+.tool-card:nth-child(4) { transition-delay: 0.4s; }
+.tool-card:nth-child(5) { transition-delay: 0.5s; }
+.tool-card:nth-child(6) { transition-delay: 0.6s; }
+
+.project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-card:nth-child(2) { transition-delay: 0.2s; }
+.project-card:nth-child(3) { transition-delay: 0.3s; }
+.project-card:nth-child(4) { transition-delay: 0.4s; }
+.project-card:nth-child(5) { transition-delay: 0.5s; }
+.project-card:nth-child(6) { transition-delay: 0.6s; }
+
+.leadership-card:nth-child(1) { transition-delay: 0.1s; }
+.leadership-card:nth-child(2) { transition-delay: 0.2s; }
+.leadership-card:nth-child(3) { transition-delay: 0.3s; }
+
+.certification-card:nth-child(1) { transition-delay: 0.1s; }
+.certification-card:nth-child(2) { transition-delay: 0.2s; }
+.certification-card:nth-child(3) { transition-delay: 0.3s; }
+.certification-card:nth-child(4) { transition-delay: 0.4s; }
+.certification-card:nth-child(5) { transition-delay: 0.5s; }
+.certification-card:nth-child(6) { transition-delay: 0.6s; } 
