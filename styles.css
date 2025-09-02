@@ -1612,6 +1612,39 @@ section {
     color: var(--text-primary);
 }
 
+/* Leadership and Project Achievements Lists */
+.leadership-achievements,
+.project-achievements {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.leadership-achievements li,
+.project-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.leadership-achievements li::before,
+.project-achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.leadership-achievements li:last-child,
+.project-achievements li:last-child {
+    margin-bottom: 0;
+}
+
 /* Certifications Section */
 .certifications {
     padding: 80px 0;
