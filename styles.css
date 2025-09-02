@@ -705,9 +705,9 @@ section {
 }
 
 .experience-card:hover {
-    transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateX(-8px) translateY(-5px) rotateZ(2deg);
+    box-shadow: 0 20px 40px rgba(9, 134, 152, 0.25);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .experience-icon {
@@ -724,7 +724,8 @@ section {
 }
 
 .experience-card:hover .experience-icon {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1) rotate(-5deg);
+    transition: all 0.4s ease;
 }
 
 .experience-icon i {
@@ -833,8 +834,9 @@ section {
 }
 
 .education-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(9, 134, 152, 0.2);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .education-icon {
@@ -851,7 +853,8 @@ section {
 }
 
 .education-card:hover .education-icon {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1) rotate(10deg);
+    transition: all 0.4s ease;
 }
 
 .education-icon i {
@@ -982,9 +985,19 @@ section {
 }
 
 .project-card:hover {
-    transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateX(10px) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(9, 134, 152, 0.25);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover::before {
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--primary) 100%);
+    transition: all 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+    transition: all 0.4s ease;
 }
 
 .project-image {
@@ -997,6 +1010,7 @@ section {
     color: white;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s ease;
 }
 
 .project-image::before {
