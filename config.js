@@ -16,26 +16,27 @@ const PORTFOLIO_CONFIG = {
 
     // Hero Section
     hero: {
-        description: "Biomedical and Mechanical Engineer, and PhD Candidate in Nanomedicine, with 3+ years of cross-functional R&D experience in the healthcare and pharmaceuticals. Skilled in leading teams and projects and delivering solutions from concept to prototype. Eager to leverage my technical and managerial experience to drive innovation and product success in Product Management roles.",
+        description: "Biomedical and Mechanical Engineer with 3+ years of cross-functional R&D experience in healthcare and pharmaceuticals. Skilled in leading teams and delivering solutions from concept to prototype. Eager to leverage technical and managerial experience to drive innovation in Product Management roles.",
         stats: {
             yearsExperience: "3+",
-            projectsCompleted: "15+",
-            publications: "1+"
+            projectsCompleted: "10+",
+            publications: "1"
         }
     },
 
     // About Section
     about: {
-        title: "From R&D to Project Management",
+        title: "From R&D to Product Management",
         paragraphs: [
-            "As a PhD student in nanomedicine with a background in biomedical and mechanical engineering, I've spent years immersed in research and development, working on cutting-edge projects that bridge the gap between engineering innovation and real-world applications.",
-            "My journey into project management began when I realized that the most brilliant technical solutions often fail without proper planning, coordination, and execution. This insight drove me to learn project management methodologies and apply them to complex engineering challenges.",
-            "I specialize in managing projects that require deep technical understanding combined with strategic thinking - from medical device development to mechanical systems optimization."
+            "As an Industrial PhD Student in Nanomedicine at MINT (Université d'Angers), I've developed expertise in microfluidics, micromixing, and lipid nanoparticle synthesis. My research focuses on developing innovative solutions for pharmaceutical applications, combining theoretical knowledge with practical implementation.",
+            "My experience spans from academic research to industrial applications, having worked at Inside Therapeutics (InsideTx) where I contributed to the development of NanoPulse - a novel organic nanoparticle synthesis machine. This unique combination of academic and industrial experience has given me valuable insights into product development cycles.",
+            "I specialize in leading cross-functional teams and managing complex projects that require both technical expertise and strategic thinking. My background in biomedical engineering, combined with my industrial experience, positions me perfectly for Product Management roles in healthcare and pharmaceutical industries."
         ],
         highlights: [
-            "PhD in Nanomedicine",
+            "Industrial PhD in Nanomedicine",
             "3+ Years R&D Experience",
-            "Project Management Certification (In Progress)"
+            "Microfluidics & Nanomedicine",
+            "Product Development & Innovation"
         ]
     },
 
@@ -45,11 +46,12 @@ const PORTFOLIO_CONFIG = {
             title: "Industrial PhD Candidate",
             date: "Feb 2024 - Present",
             institution: "Inside Therapeutics (InsideTx), France",
-            department: "Nanomedicine Research",
+            department: "Nanomedicine & Product Development Research",
             achievements: [
-                "Assisted in design, prototyping, and testing of NanoPulse – novel organic nanoparticle synthesis machine",
-                "Worked on modeling and full characterization of NanoPulse micro-mixing technology for LNP synthesis",
-                "Developed Python-based application to simulate and optimize mixing process of NanoPulse"
+                "Assisted in the design, prototyping, and testing of NanoPulse – a novel organic nanoparticle synthesis machine",
+                "Worked on the modeling and full characterization of the NanoPulse micro-mixing technology for LNP synthesis",
+                "Developed a Python-based application from scratch to simulate and optimize the mixing process of NanoPulse",
+                "Collaborating with CTO Matthieu KERHUEL on cutting-edge nanomedicine technology development"
             ]
         },
         {
@@ -60,7 +62,8 @@ const PORTFOLIO_CONFIG = {
             achievements: [
                 "Designed, 3D-printed, assembled, and tested characterization bench for microfluidic chips of TAMARA",
                 "Developed R-based programs to automatically analyze and process results from chip characterization bench",
-                "Worked on modeling and characterization of micro-mixing technology for LNP synthesis"
+                "Worked on modeling and characterization of micro-mixing technology for LNP synthesis",
+                "Contributed to product development and testing phases"
             ]
         },
         {
@@ -71,7 +74,8 @@ const PORTFOLIO_CONFIG = {
             achievements: [
                 "Characterized and tested novel active micro-mixing prototype for liposome and lipid nanoparticle synthesis",
                 "Developed autonomous image analysis algorithms using ImageJ to validate micro-mixer's mathematical model",
-                "Synthesized liposomes of controlled diameters and characterized their size and PDI via DLS"
+                "Synthesized liposomes of controlled diameters and characterized their size and PDI via DLS",
+                "Contributed to technology validation and optimization processes"
             ]
         },
         {
@@ -82,7 +86,8 @@ const PORTFOLIO_CONFIG = {
             achievements: [
                 "Optimized pre-clinical Ex-Vivo Heart Perfusion (EVHP) system in confidential interdisciplinary project",
                 "Exchanged with Medical Doctors and applied bio-fluid mechanics concepts",
-                "Gained cardiovascular-related knowledge and medical device development experience"
+                "Gained cardiovascular-related knowledge and medical device development experience",
+                "Worked on cutting-edge medical technology innovation"
             ]
         },
         {
@@ -93,7 +98,8 @@ const PORTFOLIO_CONFIG = {
             achievements: [
                 "Conducted electrochemistry experiments to validate potentiostat and detect substrates/products",
                 "Developed experimental protocols for electrochemical detection of gold nanoparticles (AuNPs)",
-                "Implemented Differential Pulse Voltammetry (DPV) techniques"
+                "Implemented Differential Pulse Voltammetry (DPV) techniques",
+                "Contributed to biosensor development and validation"
             ]
         },
         {
@@ -104,7 +110,8 @@ const PORTFOLIO_CONFIG = {
             achievements: [
                 "Identified elasticity of PEGDA hydrogels using microfluidic pipette chips",
                 "Determined added resistance of PEGDA hydrogels in micro-channels",
-                "Acquired lab skills: PDMS microfluidics chip fabrication, solution preparation, digital microscopy"
+                "Acquired lab skills: PDMS microfluidics chip fabrication, solution preparation, digital microscopy",
+                "Performed image analysis and processing for hydrogel characterization"
             ]
         },
         {
@@ -185,36 +192,69 @@ const PORTFOLIO_CONFIG = {
     // Projects
     projects: [
         {
-            title: "RBC Drug Delivery System",
-            description: "Led the development of a novel red blood cell-based drug delivery system for targeted therapeutic delivery, managing cross-functional teams and coordinating with clinical partners.",
+            title: "NanoPulse Development",
+            description: "Assisted in design, prototyping, and testing of NanoPulse - a novel organic nanoparticle synthesis machine. Developed Python-based application to simulate and optimize mixing process.",
             icon: "fas fa-heartbeat",
-            tags: ["Project Management", "Biomedical", "R&D", "Drug Delivery"],
+            tags: ["Product Development", "Nanomedicine", "Python"],
             metrics: {
-                duration: "18",
-                teamSize: "12",
-                budget: "$750K"
+                duration: "12",
+                teamSize: "Cross-functional",
+                budget: "Industrial PhD"
+            }
+        },
+        {
+            title: "RBC Drug Delivery System",
+            description: "Shear-based encapsulation and drug delivery via Red Blood Cells using COMSOL and SolidWorks. Studied drug transport in arterial geometries and in-vivo models.",
+            icon: "fas fa-tint",
+            tags: ["Biomechanics", "COMSOL", "Drug Delivery"],
+            metrics: {
+                duration: "3",
+                teamSize: "École Polytechnique",
+                budget: "Research Project"
+            }
+        },
+        {
+            title: "Stirling System Optimization Research",
+            description: "Published research on Stirling system optimization for series hybrid electric vehicles. Validated thermodynamic simulations using REFPROP and performed MATLAB simulations using bi-level optimization technique.",
+            icon: "fas fa-chart-line",
+            tags: ["Research", "Automotive", "MATLAB"],
+            metrics: {
+                duration: "11",
+                teamSize: "1",
+                budget: "Publication"
+            }
+        },
+        {
+            title: "Ex-Vivo Heart Perfusion System",
+            description: "Optimized pre-clinical Ex-Vivo Heart Perfusion (EVHP) system in confidential interdisciplinary innovation project at Hôpital Marie-Lannelongue.",
+            icon: "fas fa-heart",
+            tags: ["Biomedical", "Cardiovascular", "Innovation"],
+            metrics: {
+                duration: "3",
+                teamSize: "Medical Doctors",
+                budget: "Confidential Project"
             }
         },
         {
             title: "Tennis Ball Collector",
-            description: "Designed and developed an automated tennis ball collection system using mechanical engineering principles and innovative design solutions.",
+            description: "Designed and built an automated tennis ball collector with computer vision detection, motorized movement system, and quality testing mechanism using IR sensors and servo motors.",
             icon: "fas fa-table-tennis",
-            tags: ["Mechanical", "Automation", "Design", "Prototyping"],
+            tags: ["Automation", "Computer Vision", "LabVIEW"],
             metrics: {
-                duration: "6",
-                teamSize: "4",
-                budget: "$25K"
+                duration: "1",
+                teamSize: "Prototype",
+                budget: "Quality Testing"
             }
         },
         {
             title: "Tower Crane Design",
-            description: "Engineered and optimized a tower crane system for construction applications, improving efficiency and safety standards.",
-            icon: "fas fa-cogs",
-            tags: ["Mechanical", "Construction", "Safety", "Optimization"],
+            description: "Designed a 50m tower crane with 25m jib length capable of lifting 10T loads. Conducted structural analysis using ANSYS and MATLAB with ISO compliance.",
+            icon: "fas fa-industry",
+            tags: ["Mechanical Design", "ANSYS", "MATLAB"],
             metrics: {
                 duration: "12",
-                teamSize: "8",
-                budget: "$200K"
+                teamSize: "Final Year",
+                budget: "ISO Compliant"
             }
         }
     ],
