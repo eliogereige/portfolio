@@ -705,9 +705,9 @@ section {
 }
 
 .experience-card:hover {
-    transform: translateX(-8px) translateY(-5px) rotateZ(2deg);
-    box-shadow: 0 20px 40px rgba(9, 134, 152, 0.25);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(-8px) rotateX(3deg) rotateY(-3deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .experience-icon {
@@ -834,9 +834,9 @@ section {
 }
 
 .education-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(9, 134, 152, 0.2);
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateY(-8px) rotateX(4deg) rotateY(2deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .education-icon {
@@ -985,9 +985,9 @@ section {
 }
 
 .project-card:hover {
-    transform: translateX(10px) translateY(-5px);
-    box-shadow: 0 20px 40px rgba(9, 134, 152, 0.25);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(-8px) rotateX(-2deg) rotateY(4deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-card:hover::before {
@@ -2050,4 +2050,270 @@ section {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+} 
+
+/* Premium Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Hero Section Floating Elements */
+.hero .floating-cube {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    top: 20%;
+    left: 15%;
+    animation: float-hero 8s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.hero .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 14px solid var(--accent-light);
+    top: 60%;
+    right: 20%;
+    animation: float-hero 10s ease-in-out infinite reverse;
+    opacity: 0.4;
+}
+
+.hero .floating-hexagon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    top: 40%;
+    right: 10%;
+    animation: float-hero 12s ease-in-out infinite;
+    opacity: 0.5;
+}
+
+/* Section Floating Elements */
+.about .floating-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    top: 30%;
+    left: 10%;
+    animation: float-section 15s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.about .floating-line {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-light) 0%, transparent 100%);
+    top: 70%;
+    right: 15%;
+    animation: float-section 18s ease-in-out infinite reverse;
+    opacity: 0.4;
+}
+
+.experience .floating-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 25%;
+    right: 20%;
+    animation: float-section 20s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.experience .floating-square {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-light);
+    top: 75%;
+    left: 8%;
+    animation: float-section 16s ease-in-out infinite reverse;
+    opacity: 0.4;
+}
+
+.education .floating-diamond {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-light);
+    transform: rotate(45deg);
+    top: 40%;
+    right: 12%;
+    animation: float-section 22s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.education .floating-oval {
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 80%;
+    left: 15%;
+    animation: float-section 19s ease-in-out infinite reverse;
+    opacity: 0.4;
+}
+
+.skills .floating-star {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--primary);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 35%;
+    left: 12%;
+    animation: float-section 17s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.skills .floating-cross {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-light);
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+    top: 65%;
+    right: 18%;
+    animation: float-section 21s ease-in-out infinite reverse;
+    opacity: 0.4;
+}
+
+.projects .floating-pentagon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-light);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 45%;
+    left: 10%;
+    animation: float-section 24s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.projects .floating-arc {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    top: 75%;
+    right: 15%;
+    animation: float-section 26s ease-in-out infinite reverse;
+    opacity: 0.4;
+}
+
+.leadership .floating-wave {
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent-light) 50%, transparent 100%);
+    top: 30%;
+    left: 15%;
+    animation: float-section 23s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.leadership .floating-dot {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 70%;
+    right: 12%;
+    animation: float-section 25s ease-in-out infinite reverse;
+    opacity: 0.4;
+}
+
+.certifications .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid var(--primary-light);
+    top: 35%;
+    left: 20%;
+    animation: float-section 28s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.certifications .floating-circle {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    top: 75%;
+    right: 18%;
+    animation: float-section 30s ease-in-out infinite reverse;
+    opacity: 0.4;
+}
+
+/* Floating Animations */
+@keyframes float-hero {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-15px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-30px) translateX(5px) rotate(270deg);
+    }
+}
+
+@keyframes float-section {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translateY(-15px) translateX(8px) rotate(45deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-8px) translateX(-12px) rotate(90deg);
+        opacity: 0.4;
+    }
+    75% {
+        transform: translateY(-25px) translateX(3px) rotate(135deg);
+        opacity: 0.6;
+    }
+}
+
+/* Enhanced Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent-light) 50%, var(--primary-dark) 100%);
+    z-index: 9999;
+    transition: width 0.1s ease;
+    box-shadow: 0 2px 10px rgba(9, 134, 152, 0.3);
 } 
