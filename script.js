@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollProgress();
     initSimpleHoverEffects();
     initShootingStars();
+    initMobileNavigation(); // Add mobile navigation initialization
 });
 
 // Scroll-Triggered Reveal Effects
@@ -43,13 +44,13 @@ function initScrollTriggeredReveals() {
     });
 }
 
-// Magical Shooting Stars - Random Appearances
+// Magical Shooting Stars - Reduced frequency, less annoying
 function initShootingStars() {
     const shootingStars = document.querySelectorAll('.shooting-star');
     
     shootingStars.forEach((star, index) => {
-        // Random delay between 10-60 seconds
-        const randomDelay = Math.random() * 50 + 10;
+        // Much longer random delay between 2-5 minutes
+        const randomDelay = Math.random() * 180 + 120; // 2-5 minutes
         star.style.animationDelay = `${randomDelay}s`;
         
         // Random animation duration between 2-5 seconds
@@ -65,12 +66,12 @@ function initShootingStars() {
         star.style.setProperty('--angle', `${randomAngle}deg`);
     });
     
-    // Add new shooting stars randomly
+    // Add new shooting stars much less frequently
     setInterval(() => {
-        if (Math.random() < 0.08) { // 8% chance every interval
+        if (Math.random() < 0.02) { // Reduced from 8% to 2% chance
             createRandomShootingStar();
         }
-    }, 25000); // Check every 25 seconds
+    }, 120000); // Check every 2 minutes instead of 25 seconds
 }
 
 // Create additional random shooting stars
@@ -144,15 +145,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mobile navigation toggle
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
+// Mobile navigation toggle - Fixed hamburger menu functionality
+function initMobileNavigation() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-if (mobileNavToggle && navMenu) {
-    mobileNavToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileNavToggle.classList.toggle('active');
-    });
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
 }
 
 // Form handling with simple animations

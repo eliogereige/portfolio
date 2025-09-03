@@ -224,6 +224,19 @@ body {
     transition: 0.3s;
 }
 
+/* Hamburger menu active state */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Theme Toggle */
 
 
@@ -2205,137 +2218,7 @@ html {
     scroll-behavior: smooth;
 } 
 
-/* Premium Floating Elements - Optimized */
-.floating-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-}
 
-/* Hero Section - Only 2 elements for performance */
-.hero .floating-cube {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: var(--primary-light);
-    top: 25%;
-    left: 20%;
-    animation: float-simple 12s ease-in-out infinite;
-    opacity: 0.4;
-}
-
-.hero .floating-triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 10px solid var(--accent-light);
-    top: 70%;
-    right: 25%;
-    animation: float-simple 15s ease-in-out infinite reverse;
-    opacity: 0.3;
-}
-
-/* Section Floating Elements - Reduced to 1 per section */
-.about .floating-dot {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: var(--primary-light);
-    border-radius: 50%;
-    top: 40%;
-    right: 20%;
-    animation: float-simple 20s ease-in-out infinite;
-    opacity: 0.2;
-}
-
-.experience .floating-circle {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: var(--primary);
-    border-radius: 50%;
-    top: 30%;
-    left: 15%;
-    animation: float-simple 25s ease-in-out infinite reverse;
-    opacity: 0.2;
-}
-
-.education .floating-diamond {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: var(--accent-light);
-    transform: rotate(45deg);
-    top: 60%;
-    right: 18%;
-    animation: float-simple 22s ease-in-out infinite;
-    opacity: 0.2;
-}
-
-.skills .floating-star {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: var(--primary);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    top: 50%;
-    left: 20%;
-    animation: float-simple 18s ease-in-out infinite;
-    opacity: 0.2;
-}
-
-.projects .floating-pentagon {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: var(--primary-light);
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    top: 35%;
-    right: 15%;
-    animation: float-simple 30s ease-in-out infinite;
-    opacity: 0.2;
-}
-
-.leadership .floating-wave {
-    position: absolute;
-    width: 16px;
-    height: 2px;
-    background: var(--accent);
-    top: 45%;
-    left: 12%;
-    animation: float-simple 28s ease-in-out infinite reverse;
-    opacity: 0.2;
-}
-
-.certifications .floating-triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 8px solid var(--primary-light);
-    top: 55%;
-    right: 20%;
-    animation: float-simple 32s ease-in-out infinite;
-    opacity: 0.2;
-}
-
-/* Simplified Floating Animation */
-@keyframes float-simple {
-    0%, 100% {
-        transform: translateY(0px) translateX(0px);
-    }
-    50% {
-        transform: translateY(-15px) translateX(8px);
-    }
-}
 
 /* Enhanced Scroll Progress Bar */
 .scroll-progress {
@@ -2350,7 +2233,7 @@ html {
     box-shadow: 0 2px 10px rgba(9, 134, 152, 0.3);
 } 
 
-/* Shooting Stars - Magical Effect */
+/* Shooting Stars - Magical Effect - Reduced frequency */
 .shooting-stars {
     position: absolute;
     top: 0;
@@ -2360,6 +2243,7 @@ html {
     pointer-events: none;
     z-index: 1;
     overflow: hidden;
+    opacity: 0.3; /* Make them less prominent */
 }
 
 .shooting-star {
@@ -2446,15 +2330,17 @@ html {
     }
 }
 
-/* Individual Shooting Star Animations */
+/* Individual Shooting Star Animations - Much longer delays */
 .shooting-star:nth-child(1) {
     animation: shooting-star-1 4s ease-out infinite;
     animation-delay: 0s;
+    animation-iteration-count: 1; /* Only show once */
 }
 
 .shooting-star:nth-child(2) {
     animation: shooting-star-2 5s ease-out infinite;
-    animation-delay: 25s;
+    animation-delay: 120s; /* 2 minutes delay */
+    animation-iteration-count: 1; /* Only show once */
 }
 
 /* Random Shooting Star Animation */
@@ -2483,6 +2369,7 @@ html {
     background: white;
     border-radius: 50%;
     box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+    display: none; /* Disable random shooting stars by default */
 }
 
 .shooting-star.random::before {
@@ -2641,3 +2528,1083 @@ section {
 .certification-card:nth-child(4) { transition-delay: 0.4s; }
 .certification-card:nth-child(5) { transition-delay: 0.5s; }
 .certification-card:nth-child(6) { transition-delay: 0.6s; } 
+
+/* Premium Floating Elements - Enhanced & More Dynamic */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Hero Section - Enhanced with MANY more elements */
+.hero .floating-cube {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-light);
+    top: 25%;
+    left: 20%;
+    animation: float-enhanced-wide 12s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+.hero .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid var(--accent-light);
+    top: 70%;
+    right: 25%;
+    animation: float-enhanced-wide 15s ease-in-out infinite reverse;
+    opacity: 0.3;
+}
+
+.hero .floating-hexagon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 45%;
+    left: 60%;
+    animation: float-enhanced-wide 18s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.hero .floating-circle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 15%;
+    right: 40%;
+    animation: float-enhanced-wide 20s ease-in-out infinite reverse;
+    opacity: 0.3;
+}
+
+.hero .floating-diamond {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-light);
+    transform: rotate(45deg);
+    top: 80%;
+    left: 40%;
+    animation: float-enhanced-wide 16s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+/* NEW Hero Elements */
+.hero .floating-star {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 10%;
+    left: 80%;
+    animation: float-enhanced-wide 22s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.hero .floating-cross {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+    top: 60%;
+    right: 10%;
+    animation: float-enhanced-wide 19s ease-in-out infinite reverse;
+    opacity: 0.3;
+}
+
+.hero .floating-pentagon {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary-light);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 35%;
+    left: 10%;
+    animation: float-enhanced-wide 25s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.hero .floating-arc {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--accent);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 12px 0;
+    top: 85%;
+    right: 60%;
+    animation: float-enhanced-wide 21s ease-in-out infinite reverse;
+    opacity: 0.3;
+}
+
+.hero .floating-oval {
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 5%;
+    left: 50%;
+    animation: float-enhanced-wide 28s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.hero .floating-wave {
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: var(--accent-light);
+    top: 90%;
+    left: 70%;
+    animation: float-enhanced-wide 24s ease-in-out infinite reverse;
+    opacity: 0.3;
+}
+
+/* About Section - Enhanced with MANY more elements */
+.about .floating-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    top: 40%;
+    right: 20%;
+    animation: float-enhanced-wide 20s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.about .floating-line {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: var(--primary);
+    top: 65%;
+    left: 25%;
+    animation: float-enhanced-wide 16s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.about .floating-square {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    top: 20%;
+    left: 15%;
+    animation: float-enhanced-wide 22s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.about .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid var(--primary-light);
+    top: 75%;
+    right: 35%;
+    animation: float-enhanced-wide 18s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+/* NEW About Elements */
+.about .floating-hexagon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 10%;
+    right: 60%;
+    animation: float-enhanced-wide 26s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.about .floating-circle {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    top: 50%;
+    left: 80%;
+    animation: float-enhanced-wide 23s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.about .floating-diamond {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary-light);
+    transform: rotate(45deg);
+    top: 30%;
+    right: 80%;
+    animation: float-enhanced-wide 29s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.about .floating-star {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: var(--accent);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 85%;
+    left: 10%;
+    animation: float-enhanced-wide 27s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.about .floating-pentagon {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 15%;
+    left: 70%;
+    animation: float-enhanced-wide 31s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.about .floating-arc {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--accent-light);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 14px 0;
+    top: 70%;
+    right: 10%;
+    animation: float-enhanced-wide 25s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+/* Experience Section - Enhanced with MANY more elements */
+.experience .floating-circle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 30%;
+    left: 15%;
+    animation: float-enhanced-wide 25s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.experience .floating-square {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-light);
+    top: 70%;
+    right: 20%;
+    animation: float-enhanced-wide 22s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.experience .floating-hexagon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-light);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 50%;
+    left: 60%;
+    animation: float-enhanced-wide 19s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.experience .floating-diamond {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    transform: rotate(45deg);
+    top: 20%;
+    right: 50%;
+    animation: float-enhanced-wide 24s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+/* NEW Experience Elements */
+.experience .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid var(--primary-light);
+    top: 10%;
+    left: 80%;
+    animation: float-enhanced-wide 30s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.experience .floating-star {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 80%;
+    right: 80%;
+    animation: float-enhanced-wide 28s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.experience .floating-cross {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary);
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+    top: 40%;
+    left: 40%;
+    animation: float-enhanced-wide 33s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.experience .floating-pentagon {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: var(--accent-light);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 60%;
+    right: 60%;
+    animation: float-enhanced-wide 26s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.experience .floating-oval {
+    position: absolute;
+    width: 18px;
+    height: 9px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    top: 90%;
+    left: 20%;
+    animation: float-enhanced-wide 32s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.experience .floating-wave {
+    position: absolute;
+    width: 22px;
+    height: 3px;
+    background: var(--accent);
+    top: 15%;
+    right: 30%;
+    animation: float-enhanced-wide 29s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+/* Education Section - Enhanced with MANY more elements */
+.education .floating-diamond {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-light);
+    transform: rotate(45deg);
+    top: 60%;
+    right: 18%;
+    animation: float-enhanced-wide 22s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.education .floating-oval {
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    top: 25%;
+    left: 30%;
+    animation: float-enhanced-wide 19s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.education .floating-circle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 45%;
+    right: 40%;
+    animation: float-enhanced-wide 21s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.education .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 7px solid var(--accent);
+    top: 80%;
+    left: 20%;
+    animation: float-enhanced-wide 17s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+/* NEW Education Elements */
+.education .floating-hexagon {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 10%;
+    right: 70%;
+    animation: float-enhanced-wide 34s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.education .floating-square {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    top: 70%;
+    left: 70%;
+    animation: float-enhanced-wide 27s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.education .floating-star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-light);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 35%;
+    right: 90%;
+    animation: float-enhanced-wide 31s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.education .floating-cross {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-light);
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+    top: 85%;
+    left: 50%;
+    animation: float-enhanced-wide 28s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.education .floating-pentagon {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 5%;
+    left: 80%;
+    animation: float-enhanced-wide 35s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.education .floating-arc {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--accent);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 15px 0;
+    top: 55%;
+    right: 50%;
+    animation: float-enhanced-wide 30s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+/* Leadership Section - Enhanced with MANY more elements */
+.leadership .floating-wave {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: var(--accent);
+    top: 45%;
+    left: 12%;
+    animation: float-enhanced-wide 28s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.leadership .floating-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    top: 75%;
+    right: 35%;
+    animation: float-enhanced-wide 24s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.leadership .floating-hexagon {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 25%;
+    right: 25%;
+    animation: float-enhanced-wide 26s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.leadership .floating-square {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-light);
+    top: 55%;
+    left: 45%;
+    animation: float-enhanced-wide 23s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+/* NEW Leadership Elements */
+.leadership .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid var(--primary);
+    top: 15%;
+    left: 80%;
+    animation: float-enhanced-wide 36s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.leadership .floating-circle {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 65%;
+    right: 80%;
+    animation: float-enhanced-wide 29s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.leadership .floating-diamond {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary-light);
+    transform: rotate(45deg);
+    top: 35%;
+    left: 60%;
+    animation: float-enhanced-wide 33s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.leadership .floating-star {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: var(--accent);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 85%;
+    left: 30%;
+    animation: float-enhanced-wide 27s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.leadership .floating-pentagon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 5%;
+    right: 60%;
+    animation: float-enhanced-wide 37s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.leadership .floating-arc {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border: 2px solid var(--accent-light);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 17px 0;
+    top: 95%;
+    left: 70%;
+    animation: float-enhanced-wide 31s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+/* Projects Section - Enhanced with MANY more elements */
+.projects .floating-pentagon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-light);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 35%;
+    right: 15%;
+    animation: float-enhanced-wide 30s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.projects .floating-arc {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--accent);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 12px 0;
+    top: 55%;
+    left: 25%;
+    animation: float-enhanced-wide 26s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.projects .floating-circle {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 20%;
+    left: 60%;
+    animation: float-enhanced-wide 25s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.projects .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid var(--accent-light);
+    top: 75%;
+    right: 45%;
+    animation: float-enhanced-wide 19s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+/* NEW Projects Elements */
+.projects .floating-hexagon {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--accent);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 10%;
+    left: 40%;
+    animation: float-enhanced-wide 34s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.projects .floating-square {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-light);
+    top: 45%;
+    right: 70%;
+    animation: float-enhanced-wide 28s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.projects .floating-diamond {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    transform: rotate(45deg);
+    top: 80%;
+    left: 80%;
+    animation: float-enhanced-wide 32s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.projects .floating-star {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-light);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 65%;
+    right: 90%;
+    animation: float-enhanced-wide 29s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.projects .floating-cross {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary);
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+    top: 25%;
+    left: 90%;
+    animation: float-enhanced-wide 35s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.projects .floating-oval {
+    position: absolute;
+    width: 18px;
+    height: 9px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 90%;
+    left: 10%;
+    animation: float-enhanced-wide 27s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.projects .floating-wave {
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    background: var(--primary-light);
+    top: 15%;
+    right: 50%;
+    animation: float-enhanced-wide 33s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+/* Skills Section - Enhanced with MANY more elements */
+.skills .floating-star {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 50%;
+    left: 20%;
+    animation: float-enhanced-wide 18s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.skills .floating-cross {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+    top: 30%;
+    right: 25%;
+    animation: float-enhanced-wide 21s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.skills .floating-diamond {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary-light);
+    transform: rotate(45deg);
+    top: 70%;
+    left: 40%;
+    animation: float-enhanced-wide 24s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.skills .floating-hexagon {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 25%;
+    right: 50%;
+    animation: float-enhanced-wide 27s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+/* NEW Skills Elements */
+.skills .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid var(--primary);
+    top: 10%;
+    left: 60%;
+    animation: float-enhanced-wide 38s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.skills .floating-circle {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    top: 80%;
+    right: 80%;
+    animation: float-enhanced-wide 25s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.skills .floating-square {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--primary);
+    top: 40%;
+    left: 80%;
+    animation: float-enhanced-wide 30s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.skills .floating-pentagon {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: var(--accent);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 15%;
+    right: 70%;
+    animation: float-enhanced-wide 32s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.skills .floating-arc {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--primary-light);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 16px 0;
+    top: 60%;
+    left: 10%;
+    animation: float-enhanced-wide 29s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.skills .floating-oval {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 90%;
+    left: 60%;
+    animation: float-enhanced-wide 26s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.skills .floating-wave {
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    background: var(--primary);
+    top: 5%;
+    left: 30%;
+    animation: float-enhanced-wide 36s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+/* Certifications Section - Enhanced with MANY more elements */
+.certifications .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid var(--primary-light);
+    top: 55%;
+    right: 20%;
+    animation: float-enhanced-wide 32s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.certifications .floating-circle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    top: 25%;
+    left: 20%;
+    animation: float-enhanced-wide 27s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.certifications .floating-square {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--primary);
+    top: 40%;
+    right: 35%;
+    animation: float-enhanced-wide 29s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.certifications .floating-hexagon {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--accent);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 70%;
+    left: 50%;
+    animation: float-enhanced-wide 31s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+/* NEW Certifications Elements */
+.certifications .floating-diamond {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-light);
+    transform: rotate(45deg);
+    top: 15%;
+    right: 70%;
+    animation: float-enhanced-wide 39s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.certifications .floating-star {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: var(--accent);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 80%;
+    left: 30%;
+    animation: float-enhanced-wide 28s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.certifications .floating-cross {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+    top: 30%;
+    left: 80%;
+    animation: float-enhanced-wide 34s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.certifications .floating-pentagon {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: var(--accent-light);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 65%;
+    right: 90%;
+    animation: float-enhanced-wide 30s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.certifications .floating-arc {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--primary);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 18px 0;
+    top: 10%;
+    left: 70%;
+    animation: float-enhanced-wide 35s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.certifications .floating-oval {
+    position: absolute;
+    width: 22px;
+    height: 11px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 45%;
+    left: 10%;
+    animation: float-enhanced-wide 33s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.certifications .floating-wave {
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: var(--primary-light);
+    top: 75%;
+    left: 90%;
+    animation: float-enhanced-wide 37s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+/* Enhanced Floating Animation - MUCH BIGGER movement range across screen */
+@keyframes float-enhanced-wide {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+    }
+    10% {
+        transform: translateY(-40px) translateX(60px) rotate(36deg) scale(1.1);
+    }
+    20% {
+        transform: translateY(-60px) translateX(120px) rotate(72deg) scale(0.9);
+    }
+    30% {
+        transform: translateY(-80px) translateX(80px) rotate(108deg) scale(1.05);
+    }
+    40% {
+        transform: translateY(-100px) translateX(40px) rotate(144deg) scale(1.15);
+    }
+    50% {
+        transform: translateY(-120px) translateX(0px) rotate(180deg) scale(0.95);
+    }
+    60% {
+        transform: translateY(-100px) translateX(-40px) rotate(216deg) scale(1.1);
+    }
+    70% {
+        transform: translateY(-80px) translateX(-80px) rotate(252deg) scale(0.9);
+    }
+    80% {
+        transform: translateY(-60px) translateX(-120px) rotate(288deg) scale(1.05);
+    }
+    90% {
+        transform: translateY(-40px) translateX(-60px) rotate(324deg) scale(1.15);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(360deg) scale(1);
+    }
+}
