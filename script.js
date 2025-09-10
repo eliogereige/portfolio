@@ -1,5 +1,19 @@
 
 
+// Simple navigation function
+function navigateToSection(sectionId) {
+    var target = document.querySelector(sectionId);
+    if (target) {
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
+// Make it available globally
+window.navigateToSection = navigateToSection;
+
 // Optimized Portfolio Animations - Lightweight & Fast
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize only essential features for performance
@@ -7,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollProgress();
     initSimpleHoverEffects();
     initShootingStars();
+    initSmoothScrolling(); // Add smooth scrolling for navigation
     initMobileNavigation(); // Add mobile navigation initialization
+    initAppleStyleExperience(); // Add Apple-style experience functionality
 });
 
 // Scroll-Triggered Reveal Effects
@@ -132,18 +148,57 @@ function initSimpleHoverEffects() {
 }
 
 // Smooth scrolling for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+function initSmoothScrolling() {
+    console.log('Initializing smooth scrolling...');
+    
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    console.log('Found nav links:', navLinks.length);
+    
+    if (navLinks.length === 0) {
+        console.error('No navigation links found!');
+        return;
+    }
+    
+    navLinks.forEach((link, index) => {
+        console.log(`Setting up link ${index + 1}:`, link.getAttribute('href'));
+        
+        link.addEventListener('click', function (e) {
+            console.log('Link clicked:', this.getAttribute('href'));
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            
+            console.log('Target element found:', target);
+            
+            if (target) {
+                // Close mobile menu if open
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.nav-menu');
+                if (hamburger && navMenu) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+                
+                // Get the target position, accounting for fixed header
+                const targetPosition = target.offsetTop - 100; // Account for fixed header height
+                
+                console.log('Scrolling to position:', targetPosition);
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.error('Target not found:', targetId);
+            }
+        });
     });
-});
+    
+    console.log('Smooth scrolling setup complete!');
+}
 
 // Mobile navigation toggle - Fixed hamburger menu functionality
 function initMobileNavigation() {
@@ -157,13 +212,7 @@ function initMobileNavigation() {
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking on a nav link
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
+        // Mobile menu will be closed by the smooth scrolling function
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
@@ -200,6 +249,125 @@ if (contactForm) {
             }, 2000);
         }, 1500);
     });
+}
+
+// 3D Carousel Experience Section
+function initAppleStyleExperience() {
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const experienceDetails = document.querySelectorAll('.experience-detail');
+    const carouselTrack = document.querySelector('.carousel-track');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (!carouselItems.length || !experienceDetails.length) return;
+    
+    let currentIndex = 0;
+    const totalItems = carouselItems.length;
+    
+    // Position carousel items vertically
+    function positionCarouselItems() {
+        carouselItems.forEach((item, index) => {
+            // Remove all state classes
+            item.classList.remove('active', 'prev', 'next');
+            
+            // Add appropriate state classes
+            if (index === currentIndex) {
+                item.classList.add('active');
+            } else if (index === currentIndex - 1) {
+                item.classList.add('prev');
+            } else if (index === currentIndex + 1) {
+                item.classList.add('next');
+            }
+        });
+        
+        // Move the track to center the active item
+        const track = document.querySelector('.carousel-track');
+        const itemHeight = 100; // Height of each item
+        const gap = 16; // Gap between items (1rem = 16px)
+        const totalItemHeight = itemHeight + gap;
+        const centerOffset = (600 - itemHeight) / 2; // Center the active item
+        const translateY = centerOffset - (currentIndex * totalItemHeight);
+        
+        track.style.transform = `translateY(${translateY}px)`;
+    }
+    
+    // Update experience details
+    function updateExperienceDetails() {
+        const activeItem = carouselItems[currentIndex];
+        const targetExperience = activeItem.getAttribute('data-experience');
+        
+        // Hide all experience details
+        experienceDetails.forEach(detail => {
+            detail.classList.remove('active');
+            detail.style.visibility = 'hidden';
+            detail.style.opacity = '0';
+            detail.style.transform = 'translateX(30px)';
+        });
+        
+        // Show target experience detail
+        setTimeout(() => {
+            const targetDetail = document.getElementById(targetExperience);
+            if (targetDetail) {
+                targetDetail.style.visibility = 'visible';
+                
+                if (typeof gsap !== 'undefined') {
+                    gsap.fromTo(targetDetail, 
+                        { 
+                            opacity: 0, 
+                            x: 30,
+                            scale: 0.95
+                        },
+                        { 
+                            opacity: 1, 
+                            x: 0,
+                            scale: 1,
+                            duration: 0.6,
+                            ease: "power2.out"
+                        }
+                    );
+                }
+                
+                targetDetail.classList.add('active');
+            }
+        }, 50);
+    }
+    
+    // Navigate to next item
+    function nextItem() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        positionCarouselItems();
+        updateExperienceDetails();
+    }
+    
+    // Navigate to previous item
+    function prevItem() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        positionCarouselItems();
+        updateExperienceDetails();
+    }
+    
+    // Add click handlers to carousel items
+    carouselItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            currentIndex = index;
+            positionCarouselItems();
+            updateExperienceDetails();
+        });
+    });
+    
+    // Add button event listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevItem);
+    if (nextBtn) nextBtn.addEventListener('click', nextItem);
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') prevItem();
+        if (e.key === 'ArrowRight') nextItem();
+    });
+    
+    // Initialize carousel
+    positionCarouselItems();
+    updateExperienceDetails();
 }
 
  

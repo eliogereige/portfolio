@@ -21,22 +21,22 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link" onclick="document.querySelector('#home').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#about" class="nav-link" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#experience" class="nav-link" onclick="document.querySelector('#experience').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">Experience</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#projects" class="nav-link" onclick="document.querySelector('#projects').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#skills" class="nav-link" onclick="document.querySelector('#skills').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#contact" class="nav-link" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">Contact</a>
                 </li>
             </ul>
 
@@ -138,7 +138,7 @@
                         </p>
                         <p>
                             My experience spans from academic research to industrial applications, 
-                            having worked as an intern at different labs and companies, notably the startup Inside Therapeutics (InsideTx) where I contributed to 
+                            having worked as an intern at different labs and companies, notably the start-up Inside Therapeutics (InsideTx) where I contributed to 
                             the development of NanoPulse - a novel organic nanoparticle synthesis machine, as well as <a href="https://insidetx.com/product/tamara/" target="_blank" rel="noopener noreferrer">TAMARA</a>,
                             the only plug-and-play microfluidics LNP formulation system. 
                             This unique combination of academic and industrial experience has given me 
@@ -211,192 +211,404 @@
         </div>
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
-            <div class="section-content">
-                <div class="experience-grid">
-
-                <div class="experience-card featured">
-                    <div class="experience-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Industrial PhD (CIFRE) Student</h3>
-                            <span class="experience-date">Feb 2024 - Present</span>
+            <div class="experience-container">
+                <!-- 3D Carousel Navigation -->
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-item active" data-experience="phd">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Industrial PhD (CIFRE) Student</h3>
+                                    <p>Inside Therapeutics (InsideTx)</p>
+                                    <span class="carousel-date">Feb 2024 - Present</span>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Inside Therapeutics (InsideTx), France</h4>
-                        <p class="experience-role">Nanomedicine & Product Development Research</p>
-                        <ul class="experience-achievements">
-                            <li>Assisted in the design, prototyping, and testing of NanoPulse – a novel organic nanoparticle synthesis machine</li>
-                            <li>Worked on the modeling and full characterization of the NanoPulse micro-mixing technology for LNP synthesis</li>
-                            <li>Developed a Python-based application from scratch to simulate and optimize the mixing process of NanoPulse</li>
-                            <li>Collaborating with different teams and partners on cutting-edge microfluidic technology development</li>
-                        </ul>
+
+                        <div class="carousel-item" data-experience="rnd-engineer">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>R&D Engineer</h3>
+                                    <p>Inside Therapeutics (InsideTx)</p>
+                                    <span class="carousel-date">Nov 2023 - Feb 2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" data-experience="rnd-intern">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-microscope"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>R&D Biomedical Engineering Intern</h3>
+                                    <p>Inside Therapeutics (InsideTx)</p>
+                                    <span class="carousel-date">Apr 2023 - Sep 2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" data-experience="cardiovascular">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>R&I Biomedical Engineering Intern</h3>
+                                    <p>Hôpital Marie-Lannelongue</p>
+                                    <span class="carousel-date">May 2022 - Jul 2022</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" data-experience="electrochemistry">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Biomedical Engineering Apprentice</h3>
+                                    <p>EpiLAB</p>
+                                    <span class="carousel-date">Feb 2022 - Jul 2022</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" data-experience="microfluidics">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Microfluidics Engineering Intern</h3>
+                                    <p>LadHyX</p>
+                                    <span class="carousel-date">Apr 2022 - May 2022</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" data-experience="pharmaceutical">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Mechanical Engineering Intern</h3>
+                                    <p>Pharmaline - Malia Group</p>
+                                    <span class="carousel-date">Mar 2021 - May 2021</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" data-experience="automotive">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Undergraduate Research Assistant</h3>
+                                    <p>LAU & Stellantis</p>
+                                    <span class="carousel-date">Feb 2020 - Dec 2020</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" data-experience="industrial">
+                            <div class="carousel-card">
+                                <div class="carousel-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <div class="carousel-content">
+                                    <h3>Mechanical Engineering Intern</h3>
+                                    <p>LafargeHolcim</p>
+                                    <span class="carousel-date">Jun 2019</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Controls -->
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" id="prevBtn">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" id="nextBtn">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
                     </div>
                 </div>
 
-                
-                <div class="experience-card">
-                    <div class="experience-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>R&D Engineer</h3>
-                            <span class="experience-date">Nov 2023 - Feb 2024</span>
+                <!-- Right Content Area -->
+                <div class="experience-content">
+                    <div class="content-wrapper">
+                        <!-- PhD Experience -->
+                        <div class="experience-detail active" id="phd">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>Industrial PhD (CIFRE) Student</h3>
+                                    <h4>Inside Therapeutics (InsideTx), France</h4>
+                                    <span class="detail-date">Feb 2024 - Present</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Nanomedicine & Product Development Research</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Working on cutting-edge research in nanomedicine and microfluidics, working at the intersection of academic innovation and industrial product development. My work focuses on the development of NanoPulse, a next-generation nanoparticle synthesis machine that promises seamless scale-up capabilities for LNP synthesis.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Assisted in the design, prototyping, and testing of NanoPulse – a novel organic nanoparticle synthesis machine</li>
+                                    <li>Worked on the modeling and full characterization of the NanoPulse micro-mixing technology for LNP synthesis</li>
+                                    <li>Developed a Python-based application from scratch to simulate and optimize the mixing process of NanoPulse</li>
+                                    <li>Collaborating with different teams and partners on cutting-edge microfluidic technology development</li>
+                                </ul>
+                            </div>
                         </div>
-                        <h4>Inside Therapeutics (InsideTx), France</h4>
-                        <p class="experience-role">Biomedical Engineering & Product Development</p>
-                        <ul class="experience-achievements">
-                            <li>Designed, 3D-printed, assembled, and tested characterization bench for microfluidic chips of TAMARA</li>
-                            <li>Developed R-based programs to automatically analyze and process results from chip characterization bench</li>
-                            <li>Worked on modeling and characterization of micro-mixing technology for LNP synthesis</li>
-                            <li>Contributed to product development and testing phases</li>
-                        </ul>
+
+                        <!-- R&D Engineer Experience -->
+                        <div class="experience-detail" id="rnd-engineer">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>R&D Engineer</h3>
+                                    <h4>Inside Therapeutics (InsideTx), France</h4>
+                                    <span class="detail-date">Nov 2023 - Feb 2024</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Biomedical Engineering & Product Development</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Played a crucial role in the development and testing of TAMARA, the only plug-and-play microfluidics LNP formulation system. Led technical projects from concept to validation, working closely with cross-functional teams to deliver innovative solutions.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Designed, 3D-printed, assembled, and tested characterization bench for microfluidic chips of TAMARA</li>
+                                    <li>Developed R-based programs to automatically analyze and process results from chip characterization bench</li>
+                                    <li>Worked on the characterization of the micro-mixing technology for LNP synthesis</li>
+                                    <li>Contributed to product development and testing phases</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- R&D Intern Experience -->
+                        <div class="experience-detail" id="rnd-intern">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-microscope"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>R&D Biomedical Engineering Intern</h3>
+                                    <h4>Inside Therapeutics (InsideTx), France</h4>
+                                    <span class="detail-date">Apr 2023 - Sep 2023</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Biomedical Engineering & Nanomedicine Research</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Conducted groundbreaking research in microfluidics and nanoparticle synthesis, developing innovative solutions within a Start-Up ecosystem. Gained hands-on experience in LNP formulation techniques and data analysis.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Characterized and tested novel active micro-mixing prototype for liposome and lipid nanoparticle synthesis</li>
+                                    <li>Developed autonomous image analysis algorithms using ImageJ to validate micro-mixer's mathematical model</li>
+                                    <li>Synthesized liposomes of controlled diameters and characterized their size and PDI via DLS</li>
+                                    <li>Contributed to technology validation and optimization processes</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Cardiovascular Experience -->
+                        <div class="experience-detail" id="cardiovascular">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>R&I Biomedical Engineering Intern</h3>
+                                    <h4>Hôpital Marie-Lannelongue, France</h4>
+                                    <span class="detail-date">May 2022 - Jul 2022</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Cardiovascular Innovation & Medical Device Development</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Worked on confidential interdisciplinary projects involving cutting-edge cardiovascular technology. Collaborated directly with medical professionals to optimize life-saving medical devices and systems.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Optimized pre-clinical Ex-Vivo Heart Perfusion (EVHP) system in confidential interdisciplinary project</li>
+                                    <li>Exchanged with Medical Doctors and applied bio-fluid mechanics concepts</li>
+                                    <li>Gained cardiovascular-related knowledge and medical device development experience</li>
+                                    <li>Worked on cutting-edge medical technology innovation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Electrochemistry Experience -->
+                        <div class="experience-detail" id="electrochemistry">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>Biomedical Engineering Apprentice</h3>
+                                    <h4>EpiLAB, France</h4>
+                                    <span class="detail-date">Feb 2022 - Jul 2022</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Electrochemistry & Biosensor Development</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Specialized in electrochemical detection methods and biosensor development. Conducted advanced experiments to validate potentiostat systems and develop protocols for inorganicnanoparticle detection.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Conducted electrochemistry experiments to validate potentiostat and detect substrates/products</li>
+                                    <li>Developed experimental protocols for electrochemical detection of gold nanoparticles (AuNPs)</li>
+                                    <li>Implemented Differential Pulse Voltammetry (DPV) techniques</li>
+                                    <li>Contributed to biosensor development and validation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Microfluidics Experience -->
+                        <div class="experience-detail" id="microfluidics">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>Microfluidics Engineering Intern</h3>
+                                    <h4>LadHyX (CNRS – École Polytechnique), France</h4>
+                                    <span class="detail-date">Apr 2022 - May 2022</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Microfluidics & Hydrogel Characterization</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Conducted research at one of France's premier research institutions, focusing on hydrogel characterization using advanced microfluidic techniques. Gained expertise in PDMS chip fabrication and digital microscopy.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Identified elasticity of PEGDA hydrogels using microfluidic pipette chips</li>
+                                    <li>Determined added resistance of PEGDA hydrogels in micro-channels</li>
+                                    <li>Acquired lab skills: PDMS microfluidics chip fabrication, solution preparation, digital microscopy</li>
+                                    <li>Performed image analysis and processing for hydrogel characterization</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Pharmaceutical Experience -->
+                        <div class="experience-detail" id="pharmaceutical">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>Mechanical Engineering Intern</h3>
+                                    <h4>Pharmaline – Malia Group, Lebanon</h4>
+                                    <span class="detail-date">Mar 2021 - May 2021</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Pharmaceutical Manufacturing & Quality Assurance</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Gained valuable experience in pharmaceutical manufacturing processes and quality assurance systems. Worked on optimizing maintenance procedures and implementing GMP standards in a production environment.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Created Standard Operating Procedures (SOPs) and Preventive Maintenance Logbooks for 11 pharmaceutical machines</li>
+                                    <li>Studied steam generation and water purification systems, identified spare parts requirements</li>
+                                    <li>Assisted in selection of new Computerized Maintenance Management System (CMMS)</li>
+                                    <li>Performed preventive maintenance following Good Manufacturing Practices (GMP)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Automotive Experience -->
+                        <div class="experience-detail" id="automotive">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>Undergraduate Research Assistant</h3>
+                                    <h4>Lebanese American University & Stellantis, France</h4>
+                                    <span class="detail-date">Feb 2020 - Dec 2020</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Automotive Engineering Research</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Conducted advanced research in automotive engineering, focusing on thermodynamic simulations and optimization techniques. Published research findings and presented at an international conference.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Validated thermodynamic simulations for Stirling configurations using REFPROP and MS Excel</li>
+                                    <li>Performed MATLAB simulations on vehicle model using bi-level optimization technique</li>
+                                    <li>Published research in Journal of Automobile Engineering</li>
+                                    <li>Participated in XVI International Forum-Contest of Students and Young Researchers</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Industrial Experience -->
+                        <div class="experience-detail" id="industrial">
+                            <div class="detail-header">
+                                <div class="detail-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <div class="detail-title">
+                                    <h3>Mechanical Engineering Intern</h3>
+                                    <h4>S.L.C.B. – LafargeHolcim, Lebanon</h4>
+                                    <span class="detail-date">Jun 2019</span>
+                                </div>
+                            </div>
+                            <div class="detail-role">
+                                <p>Industrial Maintenance & Process Optimization</p>
+                            </div>
+                            <div class="detail-description">
+                                <p>Gained hands-on experience in industrial maintenance and process optimization at one of the world's leading building materials companies. Focused on improving efficiency and reducing waste in manufacturing operations.</p>
+                            </div>
+                            <div class="detail-achievements">
+                                <h5>Key Achievements</h5>
+                                <ul>
+                                    <li>Optimized bearings' preventive maintenance, reducing waste through lubrication optimization</li>
+                                    <li>Set walk-around inspection list for plant's new boiler and weekly inspection sheet for water treatment</li>
+                                    <li>Acquired on-field experience by observing corrective maintenance operations</li>
+                                    <li>Contributed to industrial process improvement and maintenance planning</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="experience-card">
-                    <div class="experience-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>R&D Biomedical Engineering Intern</h3>
-                            <span class="experience-date">Apr 2023 - Sep 2023</span>
-                        </div>
-                        <h4>Inside Therapeutics (InsideTx), France</h4>
-                        <p class="experience-role">Biomedical Engineering & Nanomedicine Research</p>
-                        <ul class="experience-achievements">
-                            <li>Characterized and tested novel active micro-mixing prototype for liposome and lipid nanoparticle synthesis</li>
-                            <li>Developed autonomous image analysis algorithms using ImageJ to validate micro-mixer's mathematical model</li>
-                            <li>Synthesized liposomes of controlled diameters and characterized their size and PDI via DLS</li>
-                            <li>Contributed to technology validation and optimization processes</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="experience-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>R&I Biomedical Engineering Intern</h3>
-                            <span class="experience-date">May 2022 - Jul 2022</span>
-                        </div>
-                        <h4>Hôpital Marie-Lannelongue, France</h4>
-                        <p class="experience-role">Cardiovascular Innovation & Medical Device Development</p>
-                        <ul class="experience-achievements">
-                            <li>Optimized pre-clinical Ex-Vivo Heart Perfusion (EVHP) system in confidential interdisciplinary project</li>
-                            <li>Exchanged with Medical Doctors and applied bio-fluid mechanics concepts</li>
-                            <li>Gained cardiovascular-related knowledge and medical device development experience</li>
-                            <li>Worked on cutting-edge medical technology innovation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="experience-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Biomedical Engineering Apprentice</h3>
-                            <span class="experience-date">Feb 2022 - Jul 2022</span>
-                        </div>
-                        <h4>EpiLAB, France</h4>
-                        <p class="experience-role">Electrochemistry & Biosensor Development</p>
-                        <ul class="experience-achievements">
-                            <li>Conducted electrochemistry experiments to validate potentiostat and detect substrates/products</li>
-                            <li>Developed experimental protocols for electrochemical detection of gold nanoparticles (AuNPs)</li>
-                            <li>Implemented Differential Pulse Voltammetry (DPV) techniques</li>
-                            <li>Contributed to biosensor development and validation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="experience-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Microfluidics Engineering Intern</h3>
-                            <span class="experience-date">Apr 2022 - May 2022</span>
-                        </div>
-                        <h4>LadHyX (CNRS – École Polytechnique), France</h4>
-                        <p class="experience-role">Microfluidics & Hydrogel Characterization</p>
-                        <ul class="experience-achievements">
-                            <li>Identified elasticity of PEGDA hydrogels using microfluidic pipette chips</li>
-                            <li>Determined added resistance of PEGDA hydrogels in micro-channels</li>
-                            <li>Acquired lab skills: PDMS microfluidics chip fabrication, solution preparation, digital microscopy</li>
-                            <li>Performed image analysis and processing for hydrogel characterization</li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                
-                <div class="experience-card">
-                    <div class="experience-icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Mechanical Engineering Intern</h3>
-                            <span class="experience-date">Mar 2021 - May 2021</span>
-                        </div>
-                        <h4>Pharmaline – Malia Group, Lebanon</h4>
-                        <p class="experience-role">Pharmaceutical Manufacturing & Quality Assurance</p>
-                        <ul class="experience-achievements">
-                            <li>Created Standard Operating Procedures (SOPs) and Preventive Maintenance Logbooks for 11 pharmaceutical machines</li>
-                            <li>Studied steam generation and water purification systems, identified spare parts requirements</li>
-                            <li>Assisted in selection of new Computerized Maintenance Management System (CMMS)</li>
-                            <li>Performed preventive maintenance following Good Manufacturing Practices (GMP)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="experience-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Undergraduate Research Assistant</h3>
-                            <span class="experience-date">Feb 2020 - Dec 2020</span>
-                        </div>
-                        <h4>Lebanese American University & Stellantis, France</h4>
-                        <p class="experience-role">Automotive Engineering Research</p>
-                        <ul class="experience-achievements">
-                            <li>Validated thermodynamic simulations for Stirling configurations using REFPROP and MS Excel</li>
-                            <li>Performed MATLAB simulations on vehicle model using bi-level optimization technique</li>
-                            <li>Published research in Journal of Automobile Engineering</li>
-                            <li>Participated in XVI International Forum-Contest of Students and Young Researchers</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="experience-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Mechanical Engineering Intern</h3>
-                            <span class="experience-date">Jun 2019</span>
-                        </div>
-                        <h4>S.L.C.B. – LafargeHolcim, Lebanon</h4>
-                        <p class="experience-role">Industrial Maintenance & Process Optimization</p>
-                        <ul class="experience-achievements">
-                            <li>Optimized bearings' preventive maintenance, reducing waste through lubrication optimization</li>
-                            <li>Set walk-around inspection list for plant's new boiler and weekly inspection sheet for water treatment</li>
-                            <li>Acquired on-field experience by observing corrective maintenance operations</li>
-                            <li>Contributed to industrial process improvement and maintenance planning</li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -791,7 +1003,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-table-tennis"></i>
+                        <i class="fas fa-baseball"></i>
                     </div>
                     <div class="project-content">
                         <h3>Tennis Ball Collector</h3>
@@ -1238,6 +1450,7 @@
         </div>
     </footer>
 
+    <script src="simple-nav.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

@@ -238,7 +238,7 @@ const PORTFOLIO_CONFIG = {
         {
             title: "Tennis Ball Collector",
             description: "Designed and built an automated tennis ball collector with computer vision detection, motorized movement system, and quality testing mechanism using IR sensors and servo motors.",
-            icon: "fas fa-table-tennis",
+            icon: "fas fa-baseball",
             tags: ["Automation", "Computer Vision", "LabVIEW"],
             metrics: {
                 duration: "1",
