@@ -206,13 +206,24 @@ function initMobileNavigation() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    console.log('Mobile navigation elements:', { hamburger, navMenu, navLinks: navLinks.length });
+
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Hamburger clicked, toggling menu');
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
-        // Mobile menu will be closed by the smooth scrolling function
+        // Close menu when clicking on nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
@@ -221,6 +232,8 @@ function initMobileNavigation() {
                 navMenu.classList.remove('active');
             }
         });
+    } else {
+        console.error('Mobile navigation elements not found:', { hamburger, navMenu });
     }
 }
 
@@ -258,42 +271,77 @@ function initAppleStyleExperience() {
     const carouselTrack = document.querySelector('.carousel-track');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const carouselContainer = document.querySelector('.carousel-container');
     
     if (!carouselItems.length || !experienceDetails.length) return;
     
-    let currentIndex = 0;
-    const totalItems = carouselItems.length;
+    // Prepare infinite roll by cloning items before and after
+    const baseItems = Array.from(carouselItems);
+    const baseCount = baseItems.length;
+    // Ensure no pre-existing state on originals
+    baseItems.forEach(item => item.classList.remove('active', 'prev', 'next'));
+    // prepend clones
+    baseItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.classList.remove('active', 'prev', 'next');
+        carouselTrack.insertBefore(clone, carouselTrack.firstChild);
+    });
+    // append clones
+    baseItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.classList.remove('active', 'prev', 'next');
+        carouselTrack.appendChild(clone);
+    });
+    // All items after cloning
+    const allItems = Array.from(carouselTrack.querySelectorAll('.carousel-item'));
+    // Start in the middle set
+    let startIndex = baseCount; // first item of middle set
+    let currentIndex = startIndex; // active visual index among allItems
+    const totalItems = allItems.length;
+    let isAnimating = false;
+    let autoplayTimer = null;
     
     // Position carousel items vertically
     function positionCarouselItems() {
-        carouselItems.forEach((item, index) => {
-            // Remove all state classes
-            item.classList.remove('active', 'prev', 'next');
-            
-            // Add appropriate state classes
-            if (index === currentIndex) {
-                item.classList.add('active');
-            } else if (index === currentIndex - 1) {
-                item.classList.add('prev');
-            } else if (index === currentIndex + 1) {
-                item.classList.add('next');
-            }
-        });
+        // Clear state on original set only
+        baseItems.forEach(item => item.classList.remove('active', 'prev', 'next'));
+        const logicalIndex = ((currentIndex - startIndex) % baseCount + baseCount) % baseCount;
+        const prevLogical = (logicalIndex - 1 + baseCount) % baseCount;
+        const nextLogical = (logicalIndex + 1) % baseCount;
+        baseItems[logicalIndex].classList.add('active');
+        baseItems[prevLogical].classList.add('prev');
+        baseItems[nextLogical].classList.add('next');
         
         // Move the track to center the active item
         const track = document.querySelector('.carousel-track');
-        const itemHeight = 100; // Height of each item
+        const itemHeight = 100; // Height of each item (must match CSS/card height)
         const gap = 16; // Gap between items (1rem = 16px)
         const totalItemHeight = itemHeight + gap;
-        const centerOffset = (600 - itemHeight) / 2; // Center the active item
-        const translateY = centerOffset - (currentIndex * totalItemHeight);
-        
+        // Top-align to match the 2rem top padding in .carousel-container
+        const topOffset = 12; // sync with .carousel-container top padding (0.75rem)
+        const translateY = topOffset - (currentIndex * totalItemHeight);
         track.style.transform = `translateY(${translateY}px)`;
+    }
+
+    // Snap to an equivalent index in the middle band without visual jump
+    function snapTo(index) {
+        const track = document.querySelector('.carousel-track');
+        const itemHeight = 100;
+        const gap = 16;
+        const totalItemHeight = itemHeight + gap;
+        const topOffset = 12;
+        currentIndex = index;
+        const snapY = topOffset - (currentIndex * totalItemHeight);
+        track.classList.add('no-transition');
+        track.style.transform = `translateY(${snapY}px)`;
+        void track.offsetHeight;
+        track.classList.remove('no-transition');
     }
     
     // Update experience details
     function updateExperienceDetails() {
-        const activeItem = carouselItems[currentIndex];
+        const logicalIndex = ((currentIndex - startIndex) % baseCount + baseCount) % baseCount;
+        const activeItem = baseItems[logicalIndex];
         const targetExperience = activeItem.getAttribute('data-experience');
         
         // Hide all experience details
@@ -334,20 +382,34 @@ function initAppleStyleExperience() {
     
     // Navigate to next item
     function nextItem() {
-        currentIndex = (currentIndex + 1) % totalItems;
+        if (isAnimating) return;
+        isAnimating = true;
+        // If we're at the last item in the middle band, snap up by one band first
+        if (currentIndex === startIndex + baseCount - 1) {
+            snapTo(currentIndex - baseCount);
+        }
+        currentIndex = currentIndex + 1;
         positionCarouselItems();
         updateExperienceDetails();
+        setTimeout(() => { isAnimating = false; }, 300);
     }
     
     // Navigate to previous item
     function prevItem() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        if (isAnimating) return;
+        isAnimating = true;
+        // If we're at the first item in the middle band, snap down by one band first
+        if (currentIndex === startIndex) {
+            snapTo(currentIndex + baseCount);
+        }
+        currentIndex = currentIndex - 1;
         positionCarouselItems();
         updateExperienceDetails();
+        setTimeout(() => { isAnimating = false; }, 300);
     }
     
     // Add click handlers to carousel items
-    carouselItems.forEach((item, index) => {
+    allItems.forEach((item, index) => {
         item.addEventListener('click', function() {
             currentIndex = index;
             positionCarouselItems();
@@ -358,16 +420,49 @@ function initAppleStyleExperience() {
     // Add button event listeners
     if (prevBtn) prevBtn.addEventListener('click', prevItem);
     if (nextBtn) nextBtn.addEventListener('click', nextItem);
+
+    // Mouse wheel to roll infinitely
+    if (carouselContainer) {
+        carouselContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (e.deltaY > 0) {
+                nextItem();
+            } else {
+                prevItem();
+            }
+        }, { passive: false });
+    }
     
     // Add keyboard navigation
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') prevItem();
-        if (e.key === 'ArrowRight') nextItem();
+        if (e.key === 'ArrowUp') prevItem();
+        if (e.key === 'ArrowDown') nextItem();
     });
+
+    // Autoplay for continuous infinite roll; pauses on hover
+    function startAutoplay() {
+        if (autoplayTimer) return;
+        autoplayTimer = setInterval(() => {
+            nextItem();
+        }, 4000);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    }
+
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoplay);
+        carouselContainer.addEventListener('mouseleave', startAutoplay);
+    }
     
     // Initialize carousel
     positionCarouselItems();
     updateExperienceDetails();
+    startAutoplay();
 }
 
  

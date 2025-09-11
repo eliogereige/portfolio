@@ -37,8 +37,8 @@ body {
     overflow-x: hidden;
     transition: all 0.3s ease;
     scroll-behavior: smooth;
-    text-align: justify;
-    text-justify: inter-character;
+    text-align: left; /* avoid forcing justify globally */
+    text-justify: auto;
     word-spacing: normal;
     letter-spacing: normal;
     hyphens: auto;
@@ -47,16 +47,25 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Better text spacing for justified text */
+/* Better text spacing for justified text (paragraphs/long blocks only) */
 p, .text-content, .description, .detail-description, .detail-achievements {
     text-align: justify;
-    text-justify: inter-character;
+    text-justify: inter-word; /* avoid inter-character spacing that creates gaps */
     word-spacing: normal;
     letter-spacing: normal;
     hyphens: auto;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Avoid justification on short labels in skills/arsenal cards */
+.skill-card h4,
+.skill-card p,
+.skills .skill-tags,
+.skills .skill-tag {
+    text-align: left;
+    text-justify: auto;
 }
 
 /* Prevent purple loading flash */
@@ -269,6 +278,13 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+}
+
+/* Hide nav-menu on desktop when hamburger is present */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex;
+    }
 }
 
 .bar {
@@ -716,19 +732,21 @@ section {
     display: flex;
     gap: 4rem;
     margin-top: 3rem;
-    min-height: 800px;
-    max-height: 1000px;
+    min-height: 820px; /* ensure enough height for right content */
+    max-height: none; /* remove artificial stretching */
+    align-items: stretch; /* make left and right columns share the same height */
 }
 
 /* Vertical Carousel Container */
 .carousel-container {
     flex: 0 0 450px;
-    height: 600px;
+    height: 820px; /* taller viewport so right content fully displays */
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* top align */
+    padding: 0.75rem 0 1rem 0; /* slightly shorter top/bottom bounds */
     overflow: hidden;
 }
 
@@ -742,6 +760,11 @@ section {
     align-items: center;
     gap: 1rem;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Snap without visual jump when normalizing index in infinite roll */
+.carousel-track.no-transition {
+    transition: none !important;
 }
 
 /* Vertical Carousel Items */
@@ -863,8 +886,8 @@ section {
 .carousel-controls {
     position: absolute;
     left: 50%;
-    top: 0;
-    bottom: 0;
+    top: 0.25rem; /* slightly tighter top bound */
+    bottom: 1rem; /* slightly tighter bottom bound */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -872,16 +895,22 @@ section {
     pointer-events: none;
     z-index: 20;
     transform: translateX(-50%);
+    opacity: 0.15; /* less distracting by default */
+    transition: opacity 0.25s ease;
+}
+
+.carousel-container:hover .carousel-controls {
+    opacity: 0.9; /* fully visible on hover only */
 }
 
 .carousel-btn {
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    color: white;
+    color: rgba(255,255,255,0.85);
     font-size: 1.2rem;
     cursor: pointer;
     display: flex;
@@ -889,12 +918,12 @@ section {
     justify-content: center;
     transition: all 0.3s ease;
     pointer-events: all;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .carousel-btn:hover {
-    background: rgba(9, 134, 152, 0.3);
-    border-color: rgba(9, 134, 152, 0.5);
+    background: rgba(9, 134, 152, 0.25);
+    border-color: rgba(9, 134, 152, 0.45);
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
@@ -1816,18 +1845,18 @@ section {
 /* Technical Arsenal */
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* slightly wider for nicer wrapping */
+    gap: 24px; /* more breathing room */
 }
 
 .tool-card {
     background: white;
     border-radius: 15px;
-    padding: 25px;
+    padding: 22px 22px 18px; /* reduce bottom padding to tighten */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     border: 1px solid var(--border-light);
-    text-align: center;
+    text-align: left; /* left-align for readability */
 }
 
 .tool-card:hover {
@@ -1844,7 +1873,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 15px;
+    margin: 0 0 12px 0; /* align with left text */
     transition: all 0.3s ease;
     box-shadow: 0 6px 20px rgba(9, 134, 152, 0.2);
 }
@@ -1862,13 +1891,19 @@ section {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .tool-info p {
     font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.5;
+    text-align: left; /* avoid big spaces in narrow cards */
+    text-justify: auto;
+    text-align-last: auto;
+    hyphens: auto; /* allow smart hyphenation instead of wide gaps */
+    overflow-wrap: anywhere; /* as a fallback to prevent large rivers */
+    text-wrap: pretty; /* modern browsers reduce awkward spacing */
 }
 
 /* Industry Expertise */
@@ -2080,6 +2115,11 @@ section {
 
 .leadership-card.podcast-hero .leadership-content h4 {
     font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.leadership-card.podcast-hero .leadership-date {
+    text-align: center; /* center the date in podcast hero card */
     margin-bottom: 1rem;
 }
 
@@ -2542,6 +2582,8 @@ section {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
         gap: 0.5rem;
+        display: flex; /* Ensure it's displayed on mobile */
+        z-index: 1000;
     }
 
     .nav-menu.active {
