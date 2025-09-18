@@ -4168,3 +4168,344 @@ section {
         transform: translateY(0px) translateX(0px) rotate(360deg) scale(1);
     }
 }
+
+/* Languages Section Styles */
+.languages {
+    position: relative;
+    padding: 100px 0;
+    background: var(--bg-tertiary);
+    overflow: hidden;
+}
+
+.languages-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.language-card {
+    background: var(--bg-primary);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.language-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+}
+
+.language-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.language-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.language-level {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.language-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.communication-highlights {
+    background: var(--bg-primary);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.communication-highlights h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+    background: var(--primary-light);
+    color: white;
+}
+
+.highlight-item i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    width: 20px;
+}
+
+.highlight-item:hover i {
+    color: white;
+}
+
+/* Personal Interests Section Styles */
+.interests {
+    position: relative;
+    padding: 100px 0;
+    background: var(--bg-primary);
+    overflow: hidden;
+}
+
+.interests-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.interest-card {
+    background: var(--bg-tertiary);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.interest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+    background: var(--bg-primary);
+}
+
+.interest-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.interest-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.interest-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.interests-note {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.interests-note p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.interests-note strong {
+    font-weight: 600;
+}
+
+/* Floating elements for new sections */
+.languages .floating-circle,
+.interests .floating-circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    top: 20%;
+    left: 15%;
+    animation: float-enhanced-wide 30s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.languages .floating-triangle,
+.interests .floating-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid var(--accent);
+    top: 60%;
+    left: 85%;
+    animation: float-enhanced-wide 32s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.languages .floating-hexagon,
+.interests .floating-hexagon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    transform: rotate(45deg);
+    top: 40%;
+    left: 5%;
+    animation: float-enhanced-wide 28s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.languages .floating-square,
+.interests .floating-square {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--accent-light);
+    top: 80%;
+    left: 75%;
+    animation: float-enhanced-wide 35s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.languages .floating-diamond,
+.interests .floating-diamond {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--primary-light);
+    transform: rotate(45deg);
+    top: 30%;
+    left: 90%;
+    animation: float-enhanced-wide 33s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.languages .floating-star,
+.interests .floating-star {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid var(--accent);
+    top: 70%;
+    left: 10%;
+    animation: float-enhanced-wide 31s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.languages .floating-cross,
+.interests .floating-cross {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    top: 50%;
+    left: 95%;
+    animation: float-enhanced-wide 29s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.languages .floating-pentagon,
+.interests .floating-pentagon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: 15%;
+    left: 80%;
+    animation: float-enhanced-wide 34s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.languages .floating-arc,
+.interests .floating-arc {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border: 2px solid var(--primary-light);
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    top: 85%;
+    left: 25%;
+    animation: float-enhanced-wide 36s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+.languages .floating-oval,
+.interests .floating-oval {
+    position: absolute;
+    width: 22px;
+    height: 11px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 25%;
+    left: 50%;
+    animation: float-enhanced-wide 27s ease-in-out infinite reverse;
+    opacity: 0.2;
+}
+
+.languages .floating-wave,
+.interests .floating-wave {
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: var(--primary-light);
+    top: 75%;
+    left: 40%;
+    animation: float-enhanced-wide 38s ease-in-out infinite;
+    opacity: 0.2;
+}
