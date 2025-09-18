@@ -36,9 +36,6 @@
                     <a href="#skills" class="nav-link" onclick="document.querySelector('#skills').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#languages" class="nav-link" onclick="document.querySelector('#languages').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">Languages</a>
-                </li>
-                <li class="nav-item">
                     <a href="#contact" class="nav-link" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;">Contact</a>
                 </li>
             </ul>
@@ -833,221 +830,398 @@
         </div>
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <div class="section-content">
-                <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-atom"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>NanoPulse Development</h3>
-                        <ul class="project-achievements">
-                            <li>Assisted in design, prototyping, and testing of NanoPulse - a novel organic nanoparticle synthesis machine</li>
-                            <li>Developed a Python-based application to simulate and optimize the mixing process</li>
-                            <li>Worked on modeling and characterization of the new micro-mixing technology for LNP synthesis</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="tag">Product Development</span>
-                            <span class="tag">Nanomedicine</span>
-                            <span class="tag">Microfluidics</span>
-                            <span class="tag">Python</span>
+            <p class="section-subtitle">Innovation through Engineering Excellence</p>
+            
+            <!-- Project Categories Filter -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+                <button class="filter-btn" data-filter="development">Development</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="biomedical">Biomedical</button>
+            </div>
+
+            <!-- Projects Timeline -->
+            <div class="projects-timeline">
+                <!-- Project 1: NanoPulse Development -->
+                <div class="timeline-item" data-category="development">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <i class="fas fa-atom"></i>
                         </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">2+</span>
-                                <span class="metric-label">Years</span>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="project-header">
+                            <div class="project-badge development">Development</div>
+                            <div class="project-year">2023-2025</div>
+                        </div>
+                        <div class="project-main">
+                            <div class="project-info">
+                                <h3>NanoPulse Development</h3>
+                                <p class="project-summary">Novel organic nanoparticle synthesis machine with simulation-based optimization</p>
+                                <div class="project-highlights">
+                                    <div class="highlight">
+                                        <i class="fas fa-cogs"></i>
+                                        <span>Design & Prototyping</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fab fa-python"></i>
+                                        <span>Python Simulation</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-flask"></i>
+                                        <span>Micro-mixing Technology</span>
+                                    </div>
+                                </div>
+                                <div class="project-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">2+</span>
+                                        <span class="stat-label">Years</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Industrial</span>
+                                        <span class="stat-label">PhD</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Innovative</span>
+                                        <span class="stat-label">R&D</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">Innovative</span>
-                                <span class="metric-label">R&D</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Industrial</span>
-                                <span class="metric-label">PhD</span>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Product Development</span>
+                                <span class="tag">Nanomedicine</span>
+                                <span class="tag">Microfluidics</span>
+                                <span class="tag">Python</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>RBC Drug Delivery System</h3>
-                        <ul class="project-achievements">
-                            <li>Designed a model for Red Blood Cell (RBC) shear-based drug encapsulation and release to optimize targeted delivery, using COMSOL and SolidWorks</li>
-                            <li>Identified key arterial factors that influence drug concentration and transport efficiency</li>
-                            <li>Explored drug release dynamics across 2D/3D arterial geometries, bifurcations, and in-vivo models to assess delivery performance</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="tag">Biomechanics</span>
-                            <span class="tag">Drug Delivery</span>
-                            <span class="tag">COMSOL</span>
-                            <span class="tag">SolidWorks</span>
+                <!-- Project 2: RBC Drug Delivery System -->
+                <div class="timeline-item" data-category="biomedical">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <i class="fas fa-tint"></i>
                         </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">3</span>
-                                <span class="metric-label">Months</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Master's</span>
-                                <span class="metric-label">Course</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Research</span>
-                                <span class="metric-label">Project</span>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="project-header">
+                            <div class="project-badge biomedical">Biomedical</div>
+                            <div class="project-year">2023</div>
+                        </div>
+                        <div class="project-main">
+                            <div class="project-info">
+                                <h3>RBC Drug Delivery System</h3>
+                                <p class="project-summary">Shear-based encapsulation and drug delivery via Red Blood Cells using COMSOL and SolidWorks</p>
+                                <div class="project-highlights">
+                                    <div class="highlight">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <span>RBC Encapsulation</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-route"></i>
+                                        <span>Arterial Transport</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-flask"></i>
+                                        <span>Bio-fluid Mechanics</span>
+                                    </div>
+                                </div>
+                                <div class="project-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">3</span>
+                                        <span class="stat-label">Months</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Master's</span>
+                                        <span class="stat-label">Course</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Research</span>
+                                        <span class="stat-label">Project</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Ex-Vivo Heart Perfusion System</h3>
-                        <ul class="project-achievements">
-                            <li>Optimized pre-clinical Ex-Vivo Heart Perfusion (EVHP) system</li>
-                            <li>Collaborated with medical doctors and applied bio-fluid mechanics concepts</li>
-                            <li>Gained cardiovascular-related knowledge and medical device development experience</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="tag">Biomedical</span>
-                            <span class="tag">Cardiovascular</span>
-                            <span class="tag">Innovation</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">3</span>
-                                <span class="metric-label">Months</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Medical</span>
-                                <span class="metric-label">Doctors</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Confidential</span>
-                                <span class="metric-label">Project</span>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Biomechanics</span>
+                                <span class="tag">Drug Delivery</span>
+                                <span class="tag">COMSOL</span>
+                                <span class="tag">SolidWorks</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Stirling System Optimization Research</h3>
-                        <ul class="project-achievements">
-                            <li>Validated thermodynamic simulations using REFPROP and performed MATLAB simulations</li>
-                            <li>Used bi-level optimization technique for system optimization</li>
-                            <li>Participated in XVI International Forum-Contest of Students and Young Researchers</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="tag">Research</span>
-                            <span class="tag">Automotive</span>
-                            <span class="tag">MATLAB</span>
+                <!-- Project 3: Ex-Vivo Heart Perfusion System -->
+                <div class="timeline-item" data-category="biomedical">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <i class="fas fa-heart"></i>
                         </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">11</span>
-                                <span class="metric-label">Months</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">1</span>
-                                <span class="metric-label">Publication</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">International</span>
-                                <span class="metric-label">Conference</span>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="project-header">
+                            <div class="project-badge biomedical">Biomedical</div>
+                            <div class="project-year">2022</div>
+                        </div>
+                        <div class="project-main">
+                            <div class="project-info">
+                                <h3>Ex-Vivo Heart Perfusion System</h3>
+                                <p class="project-summary">Optimized pre-clinical Ex-Vivo Heart Perfusion (EVHP) system with medical collaboration</p>
+                                <div class="project-highlights">
+                                    <div class="highlight">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <span>Cardiovascular</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-user-md"></i>
+                                        <span>Medical Doctors</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-flask"></i>
+                                        <span>Bio-fluid Mechanics</span>
+                                    </div>
+                                </div>
+                                <div class="project-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">2</span>
+                                        <span class="stat-label">Months</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Medical</span>
+                                        <span class="stat-label">Doctors</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Confidential</span>
+                                        <span class="stat-label">Project</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Tower Crane Design</h3>
-                        <ul class="project-achievements">
-                            <li>Designed a 50m tower crane with 25m jib length capable of lifting 10T loads</li>
-                            <li>Conducted structural analysis using ANSYS and MATLAB</li>
-                            <li>Ensured ISO compliance and safety factor above 2</li>
-                            <li>Performed wind tests and dynamic load analysis</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="tag">Mechanical Design</span>
-                            <span class="tag">ANSYS</span>
-                            <span class="tag">MATLAB</span>
-                            <span class="tag">SolidWorks</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">12</span>
-                                <span class="metric-label">Months</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Final</span>
-                                <span class="metric-label">Project</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">ISO</span>
-                                <span class="metric-label">Compliant</span>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Biomedical</span>
+                                <span class="tag">Cardiovascular</span>
+                                <span class="tag">Innovation</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-baseball"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Tennis Ball Collector</h3>
-                        <ul class="project-achievements">
-                            <li>Designed and built an automated tennis ball collector with computer vision detection</li>
-                            <li>Used IR sensors and servo motors for automation</li>
-                            <li>Implemented a novel technique to test the tennis ball's quality and sort using a GO/NOGO approach</li>
-                            <li>Developed prototype with LabVIEW programming</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="tag">Automation</span>
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">LabVIEW</span>
+                <!-- Project 4: Stirling System Optimization Research -->
+                <div class="timeline-item" data-category="research">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">2</span>
-                                <span class="metric-label">Months</span>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="project-header">
+                            <div class="project-badge research">Research</div>
+                            <div class="project-year">2020</div>
+                        </div>
+                        <div class="project-main">
+                            <div class="project-info">
+                                <h3>Stirling System Optimization Research</h3>
+                                <p class="project-summary">Published research on Stirling system optimization for series hybrid electric vehicles</p>
+                                <div class="project-highlights">
+                                    <div class="highlight">
+                                        <i class="fas fa-car"></i>
+                                        <span>Automotive</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <span>MATLAB Simulation</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-globe"></i>
+                                        <span>International Conference</span>
+                                    </div>
+                                </div>
+                                <div class="project-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">11</span>
+                                        <span class="stat-label">Months</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">1</span>
+                                        <span class="stat-label">Publication</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">International</span>
+                                        <span class="stat-label">Conference</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">Prototype</span>
-                                <span class="metric-label">Built</span>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Research</span>
+                                <span class="tag">Automotive</span>
+                                <span class="tag">MATLAB</span>
                             </div>
-                            <div class="metric">
-                                <span class="metric-value">Autonomous</span>
-                                <span class="metric-label">System</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Tower Crane Design -->
+                <div class="timeline-item" data-category="design">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="project-header">
+                            <div class="project-badge design">Design</div>
+                            <div class="project-year">2021</div>
+                        </div>
+                        <div class="project-main">
+                            <div class="project-info">
+                                <h3>Tower Crane Design</h3>
+                                <p class="project-summary">CAD design and stress analysis of a 50m tower crane with 25m jib length capable of lifting 10T loads with ISO compliance</p>
+                                <div class="project-highlights">
+                                    <div class="highlight">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span>10T Load Capacity</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>ISO Compliance</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-wind"></i>
+                                        <span>Wind Analysis</span>
+                                    </div>
+                                </div>
+                                <div class="project-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">12</span>
+                                        <span class="stat-label">Months</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Final</span>
+                                        <span class="stat-label">Project</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">ISO</span>
+                                        <span class="stat-label">Compliant</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Mechanical Design</span>
+                                <span class="tag">ANSYS</span>
+                                <span class="tag">MATLAB</span>
+                                <span class="tag">SolidWorks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Tennis Ball Collector -->
+                <div class="timeline-item" data-category="development">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">
+                            <i class="fas fa-baseball"></i>
+                        </div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="project-showcase">
+                        <div class="project-header">
+                            <div class="project-badge development">Development</div>
+                            <div class="project-year">2018</div>
+                        </div>
+                        <div class="project-main">
+                            <div class="project-info">
+                                <h3>Tennis Ball Collector</h3>
+                                <p class="project-summary">Automated tennis ball collector prototype with computer vision detection and quality sorting</p>
+                                <div class="project-highlights">
+                                    <div class="highlight">
+                                        <i class="fas fa-eye"></i>
+                                        <span>Computer Vision</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-robot"></i>
+                                        <span>Automation</span>
+                                    </div>
+                                    <div class="highlight">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>GO/NOGO Sorting</span>
+                                    </div>
+                                </div>
+                                <div class="project-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">1</span>
+                                        <span class="stat-label">Month</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Prototype</span>
+                                        <span class="stat-label">Built</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">Autonomous</span>
+                                        <span class="stat-label">System</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Automation</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">LabVIEW</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="projects-more">
-                <p class="projects-note">
-                    <strong>Additional Projects:</strong> HVAC Design, Bicycle Failure Analysis, 
-                    Heat Transfer through Pin Fin, Self-Balancing Ball-on-a-Rod, 
-                    Sun Tracking Solar Panel, TAMARA Microfluidic System, Cordless Drill Design
-                </p>
-                <p class="projects-skills">
-                    <strong>Key Skills Demonstrated:</strong> Team Leadership, CAD Design, 
-                    Control Systems, Programming, Stress Analysis, Thermal Analysis
-                </p>
+            
+            <!-- Additional Projects Summary -->
+            <div class="projects-summary">
+                <div class="summary-card">
+                    <h4>Additional Projects</h4>
+                    <div class="additional-projects">
+                        <span class="mini-project">HVAC Design</span>
+                        <span class="mini-project">Bicycle Failure Analysis</span>
+                        <span class="mini-project">Heat Transfer through Pin Fin</span>
+                        <span class="mini-project">Self-Balancing Ball-on-a-Rod</span>
+                        <span class="mini-project">Sun Tracking Solar Panel</span>
+                        <span class="mini-project">TAMARA Microfluidic System</span>
+                        <span class="mini-project">Cordless Drill Design</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h4>Key Skills Demonstrated</h4>
+                    <div class="skills-demonstrated">
+                        <span class="skill-item">Team Leadership</span>
+                        <span class="skill-item">CAD Design</span>
+                        <span class="skill-item">Programming</span>
+                        <span class="skill-item">Stress Analysis</span>
+                        <span class="skill-item">Thermal Analysis</span>
+                        <span class="skill-item">Product Development</span>
+                        <span class="skill-item">Research & Innovation</span>
+                        <span class="skill-item">Simulation & Modeling</span>
+                        <span class="skill-item">Data Analysis</span>
+                        <span class="skill-item">Project Management</span>
+                        <span class="skill-item">Cross-functional Collaboration</span>
+                        <span class="skill-item">Technical Documentation</span>
+                        <span class="skill-item">Microfluidics</span>
+                        <span class="skill-item">Medical Device Development</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1151,148 +1325,326 @@
                     </div>
                 </div>
 
-                <div class="skills-category">
+                <div class="skills-category technical-section">
                     <h3>Technical Arsenal</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-code"></i>
+                    <div class="tech-showcase">
+                        <div class="tech-categories">
+                            <div class="tech-category active" data-category="design">
+                                <div class="category-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <span>Design</span>
                             </div>
-                            <div class="tool-info">
-                                <h4>Python</h4>
-                                <p>Application development & simulation</p>
+                            <div class="tech-category" data-category="programming">
+                                <div class="category-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <span>Programming</span>
                             </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-chart-bar"></i>
+                            <div class="tech-category" data-category="analysis">
+                                <div class="category-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <span>Analysis</span>
                             </div>
-                            <div class="tool-info">
-                                <h4>MATLAB</h4>
-                                <p>Numerical analysis & optimization</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-cube"></i>
-                            </div>
-                            <div class="tool-info">
-                                <h4>SolidWorks</h4>
-                                <p>3D modeling & mechanical design</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <div class="tool-info">
-                                <h4>ANSYS</h4>
-                                <p>Structural & thermal analysis</p>
+                            <div class="tech-category" data-category="simulation">
+                                <div class="category-icon">
+                                    <i class="fas fa-atom"></i>
+                                </div>
+                                <span>Simulation</span>
                             </div>
                         </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-table"></i>
+                        
+                        <div class="tech-content-area">
+                            <div class="tech-category-content active" id="design">
+                                <div class="tech-hero">
+                                    <div class="tech-main">
+                                        <div class="tech-logo solidworks-logo">
+                                            <i class="fas fa-cube"></i>
+                                        </div>
+                                        <div class="tech-info">
+                                            <h4>SolidWorks</h4>
+                                            <p>3D modeling & mechanical design</p>
+                                            <div class="tech-stats">
+                                                <div class="stat">
+                                                    <span class="stat-number">90%</span>
+                                                    <span class="stat-label">Proficiency</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-number">6+</span>
+                                                    <span class="stat-label">Years</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-sidebar">
+                                        <div class="tech-item clickable" data-tool="freecad">
+                                            <i class="fas fa-drafting-compass"></i>
+                                            <span>FreeCAD</span>
+                                            <div class="skill-dot intermediate"></div>
+                                        </div>
+                                        <div class="tech-item clickable" data-tool="autocad">
+                                            <i class="fas fa-draw-polygon"></i>
+                                            <span>AutoCAD 2D</span>
+                                            <div class="skill-dot intermediate"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tool-info">
-                                <h4>R</h4>
-                                <p>Statistical analysis & automation</p>
+                            
+                            <div class="tech-category-content" id="programming">
+                                <div class="tech-hero">
+                                    <div class="tech-main">
+                                        <div class="tech-logo python-logo">
+                                            <i class="fab fa-python"></i>
+                                        </div>
+                                        <div class="tech-info">
+                                            <h4>Python</h4>
+                                            <p>Code development & simulation</p>
+                                            <div class="tech-stats">
+                                                <div class="stat">
+                                                    <span class="stat-number">60%</span>
+                                                    <span class="stat-label">Proficiency</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-number">3+</span>
+                                                    <span class="stat-label">Years</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-sidebar">
+                                        <div class="tech-item clickable" data-tool="r">
+                                            <i class="fas fa-chart-bar"></i>
+                                            <span>R</span>
+                                            <div class="skill-dot proficient"></div>
+                                        </div>
+                                        <div class="tech-item clickable" data-tool="labview">
+                                            <i class="fas fa-desktop"></i>
+                                            <span>LabVIEW</span>
+                                            <div class="skill-dot proficient"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-database"></i>
+                            
+                            <div class="tech-category-content" id="analysis">
+                                <div class="tech-hero">
+                                    <div class="tech-main">
+                                        <div class="tech-logo matlab-logo">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="tech-info">
+                                            <h4>MATLAB</h4>
+                                            <p>Numerical analysis & optimization</p>
+                                            <div class="tech-stats">
+                                                <div class="stat">
+                                                    <span class="stat-number">75%</span>
+                                                    <span class="stat-label">Proficiency</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-number">3+</span>
+                                                    <span class="stat-label">Years</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-sidebar">
+                                        <div class="tech-item clickable" data-tool="imagej">
+                                            <i class="fas fa-image"></i>
+                                            <span>ImageJ</span>
+                                            <div class="skill-dot advanced"></div>
+                                        </div>
+                                        <div class="tech-item clickable" data-tool="dls">
+                                            <i class="fas fa-microscope"></i>
+                                            <span>DLS</span>
+                                            <div class="skill-dot expert"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tool-info">
-                                <h4>COMSOL</h4>
-                                <p>Multiphysics simulation</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-desktop"></i>
-                            </div>
-                            <div class="tool-info">
-                                <h4>LabVIEW</h4>
-                                <p>Control systems & automation</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-image"></i>
-                            </div>
-                            <div class="tool-info">
-                                <h4>ImageJ</h4>
-                                <p>Image analysis & processing</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-microscope"></i>
-                            </div>
-                            <div class="tool-info">
-                                <h4>DLS</h4>
-                                <p>Nanoparticle characterization</p>
+                            
+                            <div class="tech-category-content" id="simulation">
+                                <div class="tech-hero">
+                                    <div class="tech-main">
+                                        <div class="tech-logo comsol-logo">
+                                            <i class="fas fa-atom"></i>
+                                        </div>
+                                        <div class="tech-info">
+                                            <h4>COMSOL</h4>
+                                            <p>Multiphysics simulation</p>
+                                            <div class="tech-stats">
+                                                <div class="stat">
+                                                    <span class="stat-number">60%</span>
+                                                    <span class="stat-label">Proficiency</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-number">2+</span>
+                                                    <span class="stat-label">Years</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-sidebar">
+                                        <div class="tech-item clickable" data-tool="ansys">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>ANSYS</span>
+                                            <div class="skill-dot intermediate"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="skills-category">
+                <div class="skills-category design-section">
                     <h3>Design & Collaboration Tools</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-palette"></i>
+                    <div class="design-grid">
+                        <div class="design-card featured">
+                            <div class="design-card-header">
+                                <div class="design-icon adobe">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="design-badge">Creative</div>
                             </div>
-                            <div class="tool-info">
+                            <div class="design-content">
                                 <h4>Adobe Creative Suite</h4>
-                                <p>Illustrator, After Effects, Animate, Media Encoder</p>
+                                <p>Professional design and multimedia tools</p>
+                                <div class="design-tools">
+                                    <span class="tool-tag">Illustrator</span>
+                                    <span class="tool-tag">After Effects</span>
+                                    <span class="tool-tag">Animate</span>
+                                    <span class="tool-tag">Media Encoder</span>
+                                </div>
+                                <div class="design-level">
+                                    <span class="level-bar">
+                                        <span class="level-fill" style="width: 60%"></span>
+                                    </span>
+                                    <span class="level-text">Beginner</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-video"></i>
+
+                        <div class="design-card">
+                            <div class="design-card-header">
+                                <div class="design-icon figma">
+                                    <i class="fas fa-pen-fancy"></i>
+                                </div>
+                                <div class="design-badge">UI/UX</div>
                             </div>
-                            <div class="tool-info">
+                            <div class="design-content">
+                                <h4>Figma</h4>
+                                <p>Design and prototyping platform</p>
+                                <div class="design-level">
+                                    <span class="level-bar">
+                                        <span class="level-fill" style="width: 40%"></span>
+                                    </span>
+                                    <span class="level-text">Beginner</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design-card">
+                            <div class="design-card-header">
+                                <div class="design-icon video">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="design-badge">Video</div>
+                            </div>
+                            <div class="design-content">
                                 <h4>CapCut</h4>
                                 <p>Video editing and content creation</p>
+                                <div class="design-level">
+                                    <span class="level-bar">
+                                        <span class="level-fill" style="width: 50%"></span>
+                                    </span>
+                                    <span class="level-text">Beginner</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-pen-fancy"></i>
+
+                        <div class="design-card">
+                            <div class="design-card-header">
+                                <div class="design-icon canva">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <div class="design-badge">Graphics</div>
                             </div>
-                            <div class="tool-info">
-                                <h4>Figma</h4>
-                                <p>UI/UX design and prototyping</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-magic"></i>
-                            </div>
-                            <div class="tool-info">
+                            <div class="design-content">
                                 <h4>Canva</h4>
                                 <p>Graphic design and presentations</p>
+                                <div class="design-level">
+                                    <span class="level-bar">
+                                        <span class="level-fill" style="width: 45%"></span>
+                                    </span>
+                                    <span class="level-text">Beginner</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-tasks"></i>
+
+                        <div class="design-card">
+                            <div class="design-card-header">
+                                <div class="design-icon notion">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="design-badge">Productivity</div>
                             </div>
-                            <div class="tool-info">
+                            <div class="design-content">
                                 <h4>Notion</h4>
                                 <p>Project documentation and organization</p>
+                                <div class="design-level">
+                                    <span class="level-bar">
+                                        <span class="level-fill" style="width: 40%"></span>
+                                    </span>
+                                    <span class="level-text">Beginner</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="tool-card">
-                            <div class="tool-icon">
-                                <i class="fas fa-project-diagram"></i>
+
+                        <div class="design-card">
+                            <div class="design-card-header">
+                                <div class="design-icon clickup">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="design-badge">Management</div>
                             </div>
-                            <div class="tool-info">
+                            <div class="design-content">
                                 <h4>ClickUp</h4>
                                 <p>Project management and task tracking</p>
+                                <div class="design-level">
+                                    <span class="level-bar">
+                                        <span class="level-fill" style="width: 40%"></span>
+                                    </span>
+                                    <span class="level-text">Beginner</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design-card featured">
+                            <div class="design-card-header">
+                                <div class="design-icon microsoft">
+                                    <i class="fab fa-microsoft"></i>
+                                </div>
+                                <div class="design-badge">Office</div>
+                            </div>
+                            <div class="design-content">
+                                <h4>Microsoft Office Suite</h4>
+                                <p>Professional productivity and collaboration tools</p>
+                                <div class="design-tools">
+                                    <span class="tool-tag">Word</span>
+                                    <span class="tool-tag">PowerPoint</span>
+                                    <span class="tool-tag">Excel</span>
+                                    <span class="tool-tag">Teams</span>
+                                    <span class="tool-tag">OneNote</span>
+                                    <span class="tool-tag">OneDrive</span>
+                                </div>
+                                <div class="design-level">
+                                    <span class="level-bar">
+                                        <span class="level-fill" style="width: 85%"></span>
+                                    </span>
+                                    <span class="level-text">Advanced</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1356,40 +1708,40 @@
                 <div class="languages-grid">
                     <div class="language-card">
                         <div class="language-icon">
-                            <i class="fas fa-globe-americas"></i>
+                            <span class="flag-emoji">🇱🇧</span>
                         </div>
                         <div class="language-content">
                             <h3>Lebanese Arabic</h3>
                             <p class="language-level">Mother Tongue</p>
-                            <p class="language-description">Native speaker with cultural fluency</p>
+                            <p class="language-description">Native speaker</p>
                         </div>
                     </div>
                     
                     <div class="language-card">
                         <div class="language-icon">
-                            <i class="fas fa-flag-usa"></i>
+                            <span class="flag-emoji">🇺🇸</span>
                         </div>
                         <div class="language-content">
                             <h3>English</h3>
                             <p class="language-level">Fluent</p>
-                            <p class="language-description">TOEFL IBT: 107/120 (C1 Level)</p>
+                            <p class="language-description">TOEFL IBT: 107/120, C1 Level</p>
                         </div>
                     </div>
                     
                     <div class="language-card">
                         <div class="language-icon">
-                            <i class="fas fa-flag"></i>
+                            <span class="flag-emoji">🇫🇷</span>
                         </div>
                         <div class="language-content">
                             <h3>French</h3>
                             <p class="language-level">Fluent</p>
-                            <p class="language-description">C1 Level - Professional proficiency</p>
+                            <p class="language-description">French Baccalaureate, C1 Level</p>
                         </div>
                     </div>
                     
                     <div class="language-card">
                         <div class="language-icon">
-                            <i class="fas fa-flag"></i>
+                            <span class="flag-emoji">🇪🇸</span>
                         </div>
                         <div class="language-content">
                             <h3>Spanish</h3>
@@ -1411,7 +1763,7 @@
                             <span>Cross-Cultural Team Leadership</span>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-presentation"></i>
+                            <i class="fas fa-globe"></i>
                             <span>International Conference Presentations</span>
                         </div>
                         <div class="highlight-item">
@@ -1460,7 +1812,7 @@
                         </div>
                         <div class="interest-content">
                             <h3>Reading & Writing</h3>
-                            <p>Continuous learning and knowledge sharing</p>
+                            <p>Continuously learning, exploring ideas, and sharing knowledge</p>
                         </div>
                     </div>
                     
@@ -1469,8 +1821,8 @@
                             <i class="fas fa-table-tennis"></i>
                         </div>
                         <div class="interest-content">
-                            <h3>Tennis</h3>
-                            <p>Strategic thinking and competitive sports</p>
+                            <h3>Ping-Pong & Tennis</h3>
+                            <p>Beginner! Hit me up if you want to play</p>
                         </div>
                     </div>
                     
@@ -1479,8 +1831,8 @@
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="interest-content">
-                            <h3>Music</h3>
-                            <p>Creative expression and cultural appreciation</p>
+                            <h3>Trance & Electronic Music</h3>
+                            <p>I mostly listen or dance to the jams. I occasionally make some too</p>
                         </div>
                     </div>
                     
@@ -1489,17 +1841,28 @@
                             <i class="fas fa-laptop-code"></i>
                         </div>
                         <div class="interest-content">
-                            <h3>Technology</h3>
-                            <p>Passionate about emerging tech and innovation</p>
+                            <h3>Innovation & Technology</h3>
+                            <p>Passionate about emerging tech and innovation. I also tinker from time to time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="interest-content">
+                            <h3>Personal Finance</h3>
+                            <p>Learning about financial markets, investment strategies, and building long-term wealth</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="interests-note">
                     <p>
-                        <strong>Why These Matter:</strong> My interests reflect a balanced approach to personal and professional development. 
+                        <strong>Why These Matter?</strong> Well, my interests reflect a balanced approach to personal and professional development. 
                         Fitness and tennis demonstrate discipline and strategic thinking, while reading and writing show continuous learning. 
-                        My passion for technology aligns perfectly with my career transition into Product Management.
+                        My passion for innovation & technology aligns perfectly with my career transition into Product Management. 
+                        Personal finance shows my analytical mindset and long-term planning skills, which are crucial for product strategy and business growth.
                     </p>
                 </div>
             </div>
@@ -1667,9 +2030,9 @@
                             <input type="text" id="subject" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea id="message" name="message" placeholder="Example: Your portfolio is so cool! I would love to connect with you and work on a project together." rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Example: Your portfolio is so cool! I would love to connect with you and work on a project together.</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1687,5 +2050,120 @@
 
     <script src="simple-nav.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Technical Arsenal Tab Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categories = document.querySelectorAll('.tech-category');
+            const contents = document.querySelectorAll('.tech-category-content');
+            
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const targetCategory = this.getAttribute('data-category');
+                    
+                    // Remove active class from all categories and contents
+                    categories.forEach(cat => cat.classList.remove('active'));
+                    contents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked category and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetCategory).classList.add('active');
+                });
+            });
+
+            // Sidebar tool click functionality
+            const clickableTools = document.querySelectorAll('.tech-item.clickable');
+            clickableTools.forEach(tool => {
+                tool.addEventListener('click', function() {
+                    const toolName = this.getAttribute('data-tool');
+                    const toolSpan = this.querySelector('span');
+                    const toolText = toolSpan.textContent;
+                    
+                    // Create a temporary highlight effect
+                    this.style.background = 'var(--primary)';
+                    this.style.color = 'white';
+                    
+                    // Show a brief tooltip or alert with tool information
+                    const toolInfo = {
+                        'r': 'R - Statistical analysis & automation (Proficient)',
+                        'labview': 'LabVIEW - Control systems & automation (Proficient)',
+                        'ansys': 'ANSYS - Structural & thermal analysis (Intermediate)',
+                        'imagej': 'ImageJ - Image analysis & processing (Advanced)',
+                        'dls': 'DLS - Nanoparticle characterization (Expert)',
+                        'freecad': 'FreeCAD - Open-source 3D CAD modeling (Proficient)',
+                        'autocad': 'AutoCAD 2D - Technical drawing & drafting (Intermediate)'
+                    };
+                    
+                    // Create a temporary tooltip
+                    const tooltip = document.createElement('div');
+                    tooltip.textContent = toolInfo[toolName] || `${toolText} - Clicked!`;
+                    tooltip.style.cssText = `
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background: var(--primary);
+                        color: white;
+                        padding: 15px 25px;
+                        border-radius: 10px;
+                        font-weight: 600;
+                        z-index: 1000;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                        animation: fadeInOut 2s ease-in-out;
+                    `;
+                    
+                    document.body.appendChild(tooltip);
+                    
+                    // Remove tooltip after 2 seconds
+                    setTimeout(() => {
+                        document.body.removeChild(tooltip);
+                    }, 2000);
+                    
+                    // Reset tool styling after a brief moment
+                    setTimeout(() => {
+                        this.style.background = '';
+                        this.style.color = '';
+                    }, 300);
+                });
+            });
+        });
+
+        // Add CSS animation for tooltip
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Project Filtering Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter timeline items
+                timelineItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'flex';
+                        item.style.animation = 'fadeInUp 0.6s ease forwards';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+    </script>
 </body>
 </html> 
