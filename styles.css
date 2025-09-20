@@ -2914,517 +2914,534 @@ section {
         font-size: 1.1rem;
     }
 }
+/* SIMPLE MOBILE FIX - 768px and below */
 @media (max-width: 768px) {
-    /* Mobile Navigation */
-    .theme-toggle {
-        margin-right: 10px;
+    /* Reset everything to be mobile-friendly */
+    * {
+        box-sizing: border-box;
     }
     
-    .theme-toggle-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+    /* Basic mobile layout */
+    .container {
+        padding: 0 10px !important;
+        max-width: 100% !important;
     }
     
+    .section {
+        padding: 20px 0 !important;
+    }
+    
+    /* Section titles - bigger for mobile */
+    .section-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+        word-break: break-word !important;
+        line-height: 1.2 !important;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+    }
+    
+    /* Navigation */
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-menu {
-        position: fixed;
+        position: fixed !important;
         left: -100%;
         top: 70px;
-        flex-direction: column;
+        flex-direction: column !important;
         background-color: var(--bg-primary);
         width: 100%;
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
+        padding: 1rem 0;
         gap: 0.5rem;
-        display: flex;
+        display: flex !important;
         z-index: 1000;
     }
 
     .nav-menu.active {
-        left: 0;
+        left: 0 !important;
     }
 
     .nav-menu .nav-item {
-        padding: 0.75rem 1rem;
+        padding: 0.5rem 1rem;
         margin: 0.25rem 1rem;
         background: rgba(9, 134, 152, 0.05);
         border-radius: 8px;
     }
 
     .nav-link {
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 0.5rem 1rem;
     }
-
-    /* Mobile Hero Section */
+    
+    /* HERO SECTION - Mobile Fix */
     .hero {
-        padding: 100px 0 60px;
-        min-height: 100vh;
+        padding: 80px 0 40px !important;
+        min-height: auto !important;
     }
 
     .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-        padding: 0 15px;
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 2rem !important;
+        padding: 0 20px !important;
     }
 
     .hero-title {
-        font-size: 1.6rem;
-        line-height: 1.1;
-        margin-bottom: 0.5rem;
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
     }
-
+    
     .hero-subtitle {
-        font-size: 0.9rem;
-        line-height: 1.3;
-        margin-bottom: 1rem;
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1.5rem !important;
     }
-
+    
     .hero-description {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        margin-bottom: 1.5rem;
-        padding: 0 5px;
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 2rem !important;
     }
-
+    
     .hero-buttons {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
     }
-
+    
     .btn {
-        width: 100%;
-        max-width: 200px;
-        padding: 8px 16px;
-        font-size: 0.85rem;
+        width: 100% !important;
+        max-width: 250px !important;
+        padding: 12px 24px !important;
+        font-size: 1rem !important;
     }
-
+    
     .hero-image {
-        order: -1;
-        margin-bottom: 1rem;
+        order: -1 !important;
+        margin-bottom: 2rem !important;
     }
-
+    
     .profile-card {
-        max-width: 200px;
-        margin: 0 auto;
+        max-width: 250px !important;
+        margin: 0 auto !important;
     }
-
+    
     .profile-stats {
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 1rem;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        gap: 1rem !important;
     }
-
+    
     .stat {
-        text-align: center;
+        text-align: center !important;
     }
-
+    
     .stat-number {
-        font-size: 1.2rem;
+        font-size: 1.5rem !important;
     }
-
+    
     .stat-label {
-        font-size: 0.7rem;
+        font-size: 0.8rem !important;
     }
-
-    /* Mobile About Section */
+    
+    /* ABOUT SECTION - Mobile Fix */
     .about {
-        padding: 40px 0;
+        padding: 50px 0 !important;
     }
-
+    
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0 10px;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 0 20px !important;
     }
-
+    
     .about-text h2 {
-        font-size: 1.4rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
     }
-
+    
     .about-text p {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        margin-bottom: 1rem;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
     }
-
+    
     .about-stats {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-        margin-top: 1rem;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        margin-top: 2rem !important;
     }
-
+    
     .about-stat {
-        text-align: center;
-        padding: 0.5rem;
+        text-align: center !important;
+        padding: 1rem !important;
     }
-
+    
     .about-stat-number {
-        font-size: 1.3rem;
+        font-size: 1.8rem !important;
     }
-
+    
     .about-stat-label {
-        font-size: 0.7rem;
+        font-size: 0.8rem !important;
     }
-
-    /* Mobile Experience Section */
+    
+    /* EXPERIENCE SECTION - Mobile Fix */
     .experience {
-        padding: 40px 0;
+        padding: 50px 0 !important;
     }
-
+    
     .experience-container {
-        flex-direction: column;
-        gap: 1rem;
-        min-height: auto;
-        max-height: none;
-        padding: 0 10px;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 0 20px !important;
     }
     
     .experience-content {
-        order: 1;
-        min-height: 400px;
+        order: 1 !important;
+        min-height: auto !important;
     }
     
     .nav-item {
-        padding: 0.8rem 1rem;
-        margin: 0.2rem 0;
-        min-height: 70px;
+        padding: 1rem 1.5rem !important;
+        margin: 0.5rem 0 !important;
+        min-height: 80px !important;
     }
     
     .nav-icon {
-        width: 30px;
-        height: 30px;
+        width: 35px !important;
+        height: 35px !important;
     }
     
     .nav-icon i {
-        font-size: 12px;
+        font-size: 14px !important;
     }
     
     .nav-content h3 {
-        font-size: 0.8rem;
+        font-size: 0.9rem !important;
     }
     
     .nav-content p {
-        font-size: 0.7rem;
+        font-size: 0.8rem !important;
     }
     
     .nav-date {
-        font-size: 0.65rem;
+        font-size: 0.7rem !important;
     }
     
     .detail-header {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
     }
     
     .detail-icon {
-        width: 40px;
-        height: 40px;
-        margin: 0 auto;
+        width: 50px !important;
+        height: 50px !important;
+        margin: 0 auto !important;
     }
     
     .detail-icon i {
-        font-size: 16px;
+        font-size: 20px !important;
     }
     
     .detail-title h3 {
-        font-size: 1.1rem;
+        font-size: 1.3rem !important;
     }
     
     .detail-title h4 {
-        font-size: 0.8rem;
+        font-size: 1rem !important;
     }
     
     .detail-role p {
-        font-size: 0.8rem;
-        text-align: center;
+        font-size: 0.9rem !important;
+        text-align: center !important;
     }
     
     .detail-description p {
-        font-size: 0.75rem;
-        text-align: center;
+        font-size: 0.85rem !important;
+        text-align: center !important;
     }
     
     .detail-achievements h5 {
-        font-size: 0.8rem;
-        text-align: center;
+        font-size: 0.9rem !important;
+        text-align: center !important;
     }
     
     .detail-achievements li {
-        font-size: 0.75rem;
+        font-size: 0.8rem !important;
     }
     
     .education-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
     
     .education-card {
-        padding: 15px;
+        padding: 20px !important;
     }
     
     .education-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column !important;
+        align-items: flex-start !important;
     }
     
     .education-date {
-        align-self: flex-start;
-        font-size: 0.7rem;
+        align-self: flex-start !important;
+        font-size: 0.8rem !important;
     }
-
-    /* Mobile Projects Section - Simple & Clean */
+    
+    /* PROJECTS SECTION - Mobile Fix */
     .projects {
-        padding: 40px 0;
+        padding: 50px 0 !important;
     }
-
+    
     .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 20px;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 0 20px !important;
     }
-
+    
     .project-card {
-        min-height: auto;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        background: white;
+        min-height: auto !important;
+        padding: 20px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        background: white !important;
+        margin: 0 !important;
+        border: 1px solid #e0e0e0 !important;
     }
-
+    
     .project-image {
-        height: 180px;
-        margin-bottom: 15px;
-        border-radius: 6px;
-        object-fit: cover;
-        width: 100%;
+        height: 200px !important;
+        margin-bottom: 15px !important;
+        border-radius: 8px !important;
+        object-fit: cover !important;
+        width: 100% !important;
     }
-
+    
     .project-content h3 {
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-        line-height: 1.3;
-        color: #333;
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+        line-height: 1.3 !important;
+        color: #333 !important;
     }
-
+    
     .project-content p {
-        font-size: 0.85rem;
-        line-height: 1.4;
-        margin-bottom: 12px;
-        color: #666;
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 12px !important;
+        color: #666 !important;
     }
-
+    
     .project-tech {
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-top: 10px;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        margin-top: 12px !important;
     }
-
+    
     .tech-tag {
-        font-size: 0.7rem;
-        padding: 4px 8px;
-        border-radius: 4px;
-        background: #f0f0f0;
-        color: #555;
+        font-size: 0.7rem !important;
+        padding: 4px 8px !important;
+        border-radius: 6px !important;
+        background: #f0f0f0 !important;
+        color: #555 !important;
     }
-
+    
     .project-card:hover {
-        transform: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: none !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
     }
-
-    /* Mobile Skills Section - Simple & Clean */
+    
+    /* SKILLS SECTION - Mobile Fix */
     .skills {
-        padding: 40px 0;
+        padding: 50px 0 !important;
     }
-
+    
     .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 20px;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 0 20px !important;
     }
     
     .skill-card {
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        background: white;
+        padding: 25px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        background: white !important;
+        margin: 0 !important;
+        border: 1px solid #e0e0e0 !important;
     }
-
+    
     .skill-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-        color: #333;
-        font-weight: 600;
+        font-size: 1.2rem !important;
+        margin-bottom: 12px !important;
+        color: #333 !important;
+        font-weight: 600 !important;
+        text-align: center !important;
     }
-
+    
     .skill-card p {
-        font-size: 0.85rem;
-        line-height: 1.4;
-        color: #666;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: #666 !important;
+        text-align: center !important;
+        margin-bottom: 18px !important;
     }
     
     .expertise-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-top: 1.5rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+        margin-top: 1.8rem !important;
     }
     
     .expertise-item {
-        padding: 15px;
-        flex-direction: column;
-        text-align: center;
-        background: #f8f9fa;
-        border-radius: 8px;
+        padding: 18px !important;
+        flex-direction: row !important;
+        text-align: left !important;
+        background: #f8f9fa !important;
+        border-radius: 10px !important;
+        margin: 0 !important;
+        border: 1px solid #e0e0e0 !important;
+        align-items: center !important;
     }
-
+    
     .expertise-item i {
-        font-size: 1.5rem;
-        color: var(--primary);
-        margin-bottom: 8px;
+        font-size: 1.6rem !important;
+        color: var(--primary) !important;
+        margin-right: 15px !important;
+        margin-bottom: 0 !important;
+        flex-shrink: 0 !important;
     }
-
+    
     .expertise-item h4 {
-        font-size: 0.9rem;
-        margin-bottom: 5px;
-        color: #333;
+        font-size: 1rem !important;
+        margin-bottom: 5px !important;
+        color: #333 !important;
+        font-weight: 600 !important;
     }
-
+    
     .expertise-item p {
-        font-size: 0.8rem;
-        color: #666;
+        font-size: 0.85rem !important;
+        color: #666 !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0 !important;
     }
-
+    
     .tools-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1rem;
-        padding: 0 20px;
-        margin-top: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)) !important;
+        gap: 1.2rem !important;
+        padding: 0 20px !important;
+        margin-top: 1.8rem !important;
     }
     
     .tool-card {
-        padding: 15px;
-        text-align: center;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 18px !important;
+        text-align: center !important;
+        background: white !important;
+        border-radius: 10px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+        margin: 0 !important;
+        border: 1px solid #e0e0e0 !important;
     }
-
+    
     .tool-card:hover {
-        transform: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: none !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     }
-
+    
     .tool-card i {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
-        color: var(--primary);
+        font-size: 2rem !important;
+        margin-bottom: 10px !important;
+        color: var(--primary) !important;
     }
-
+    
     .tool-card h4 {
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: #333;
+        font-size: 0.85rem !important;
+        font-weight: 500 !important;
+        color: #333 !important;
     }
-
-    /* Mobile Contact Section */
+    
+    /* CONTACT SECTION - Mobile Fix */
     .contact {
-        padding: 40px 0;
+        padding: 50px 0 !important;
     }
-
+    
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0 10px;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 0 20px !important;
     }
-
+    
     .contact-info {
-        text-align: center;
+        text-align: center !important;
     }
-
+    
     .contact-info h2 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
-
+    
     .contact-info p {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        margin-bottom: 1.5rem;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 2rem !important;
     }
-
+    
     .contact-methods {
-        gap: 0.5rem;
+        gap: 1rem !important;
     }
-
+    
     .contact-method {
-        padding: 0.8rem;
-        flex-direction: row;
-        text-align: left;
+        padding: 1rem !important;
+        flex-direction: row !important;
+        text-align: left !important;
     }
-
+    
     .contact-method i {
-        font-size: 1.2rem;
-        margin-right: 0.8rem;
-        margin-bottom: 0;
+        font-size: 1.3rem !important;
+        margin-right: 1rem !important;
+        margin-bottom: 0 !important;
     }
-
+    
     .contact-form {
-        padding: 1rem;
+        padding: 1.5rem !important;
     }
-
+    
     .form-group {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem !important;
     }
-
+    
     .form-group input,
     .form-group textarea {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
     }
-
+    
     .form-group label {
-        font-size: 0.8rem;
-        margin-bottom: 0.3rem;
+        font-size: 0.85rem !important;
+        margin-bottom: 0.5rem !important;
     }
-
-    /* Mobile Section Headers */
-    .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .section-subtitle {
-        font-size: 0.85rem;
-        margin-bottom: 1.5rem;
-    }
-
-    /* Mobile General Improvements */
-    .container {
-        padding: 0 10px;
-    }
-
-    .section {
-        padding: 30px 0;
-    }
-
-    /* Mobile Floating Elements - Reduce on mobile for performance */
+    
+    /* Disable animations on mobile */
     .floating-elements {
-        display: none;
+        display: none !important;
     }
-
+    
     .shooting-stars {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -3472,55 +3489,63 @@ section {
     }
 
     .project-card {
-        padding: 15px;
+        padding: 12px;
+        margin: 0 3px;
     }
 
     .project-image {
-        height: 150px;
+        height: 120px;
     }
 
     .project-content h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .project-content p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .skill-card {
-        padding: 15px;
+        padding: 12px;
+        margin: 0 3px;
     }
 
     .skill-card h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .skill-card p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .expertise-item {
-        padding: 12px;
+        padding: 10px;
+        margin: 0 3px;
     }
 
     .expertise-item h4 {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
 
     .expertise-item p {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
-
+    
     .tool-card {
-        padding: 12px;
+        padding: 10px;
+        margin: 0 1px;
     }
 
     .tool-card i {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .tool-card h4 {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem !important;
     }
 
     .contact-form {
@@ -3602,7 +3627,7 @@ section {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
-}
+} 
 
 /* Mobile-specific improvements */
 @media (max-width: 768px) {
